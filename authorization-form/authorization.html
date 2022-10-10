@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="authorization.css" />
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>MyApp</title>
+  </head>
+  <body class="authorization-body">
+    <main>
+      <section class="authorization-form">
+        <h1 class="hidden">Форма авторизации</h1>
+        <h2 class="logo authorization-form__logo">MyApp</h2>
+        <input
+          placeholder="Введите имя"
+          type="text"
+          name="username"
+          class="input authorization-form__input"
+        />
+        <input
+          maxlength="3"
+          placeholder="Введите номер комнаты"
+          type="text"
+          name="roomId"
+          class="input authorization-form__input"
+        />
+        <a
+          href="/chat-box/chat-box.html"
+          class="button authorization-form__button"
+          >Присоединиться</a
+        >
+      </section>
+    </main>
+  </body>
+</html>
