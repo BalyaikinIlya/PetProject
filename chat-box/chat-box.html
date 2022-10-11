@@ -18,69 +18,290 @@
     <title>ChatRoom</title>
   </head>
   <body class="chat-body">
-    <main class="chat-box">
-      <h1 class="hidden">Комната чата</h1>
+    <main class="chat-app">
       <section class="sidebar">
         <h2 class="hidden">Боковое меню</h2>
-        <h3 class="sidebar__logo logo">MyApp</h3>
-        <ul class="user-list">
-          <h4 class="user-list__header">Участники комнаты</h4>
-          <li class="user-list__item">Баляйкин Илья</li>
-          <li class="user-list__item">Тремаскин Кирилл</li>
-          <li></li>
+        <h3 class="sidebar__header logo">MyApp</h3>
+        <ul class="members">
+          <p class="members__header">Список участников</p>
+          <li class="members__item">Баляйкин Илья</li>
+          <li class="members__item">Тремаскин Кирилл</li>
         </ul>
-
-        <a
-          href="/authorization-form/authorization.html"
-          class="sidebar__button button"
-          >Покинуть</a
-        >
+        <a href="" class="members__footer">Покинуть</a>
       </section>
-      <section class="chat-screen">
+      <section class="chat-window">
         <h2 class="hidden">Окно чата</h2>
-        <h3 class="chat-screen__title">Чат комнаты №1</h3>
-        <!-- Может что то лучше подойдет по семантике вместо div (message-list) -->
-        <div class="message-screen">
-          <ul class="users-joined">
-            <li class="users-joined__item">
-              Баляйкин Илья
-              <span class="users-joined__status_attendance_active"
-                >подключился к чату</span
-              >
-            </li>
-            <li class="users-joined__item">
-              Тремаскин Кирилл
-              <span class="users-joined__status_attendance_active"
-                >подключился к чату</span
-              >
-            </li>
-          </ul>
-          <ul class="message-list">
-            <li class="message-list__item interlocutor">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae iure doloremque ullam ab, ipsam, sequi explicabo
-              tempore, accusantium officia incidunt delectus! Nisi, similique,
-              cupiditate cum, repellendus sed animi odit accusamus illo aperiam
-              hic enim maxime repudiandae eveniet perferendis dolorem velit esse
-              ducimus quis ex. Voluptatem nesciunt nemo dolorem natus dolor?
-            </li>
-            <li class="message-list__item me">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              quisquam voluptates praesentium laborum nisi quasi minima autem,
-              veniam reprehenderit. Animi.
-            </li>
-          </ul>
-        </div>
-        <div class="send-message">
-          <input
-            placeholder="Начните что-то набирать. . ."
-            type="text"
-            class="send-message__input input"
-          />
-          <button class="send-message__button">
-            <img src="/src/img/send-message__button.png" alt="" />
+        <h3 class="chat-window__header">Чат комнаты №1</h3>
+        <ul class="message-list">
+          <li class="message-list__item message-list__item_systemed_joined">
+            Пользователь Баляйкин Илья присоединился
+            
+          </li>
+          <li class="message-list__item message-list__item_systemed_joined">
+            Пользователь Тремаскин Кирилл присоединился
+            
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            Привет как дела?
+            <span class="message-list__message-time">12:10</span>
+          </li>
+          <li class="message-list__item message-list__item_recived">
+            У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем. У меня хорошо. asdasdasdПоasdшли курнем. У меня хорошо. Пошли курнем.У меня хорошо. Пошли курнем. У меня хорошо. Пошли asdasdasdasadasdasdasdasкурнем. У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем. У меня хорошо. Пошли курнем.sssssssssssssssssssssssssssssssssssssssssss asd as
+            <span class="message-list__message-time">12:11</span>
+          </li>
+          <li class="message-list__item message-list__item_recived">
+            У меня хорошо. Пошли курнем.
+            <span class="message-list__message-time">12:11</span>
+          </li>
+          <li class="message-list__item message-list__item_recived">
+            У меня хорошо. Пошли курнем.
+            <span class="message-list__message-time">12:11</span>
+          </li>
+        </li>
+        <li class="message-list__item message-list__item_owned">
+          Привет как дела?
+          <span class="message-list__message-time">12:10</span>
+        </li>
+        <li class="message-list__item message-list__item_recived">
+          У меня хорошо. Пошли курнем.
+          <span class="message-list__message-time">12:11</span>
+        </li>
+        <li class="message-list__item message-list__item_recived">
+          У меня хорошо. Пошли курнем.
+          <span class="message-list__message-time">12:11</span>
+        </li>
+        <li class="message-list__item message-list__item_recived">
+          У меня хорошо. Пошли курнем.
+          <span class="message-list__message-time">12:11</span>
+        </li>
+      </li>
+      <li class="message-list__item message-list__item_owned">
+        Привет как дела?
+        <span class="message-list__message-time">12:10</span>
+      </li>
+      <li class="message-list__item message-list__item_recived">
+        У меня хорошо. Пошли курнем.
+        <span class="message-list__message-time">12:11</span>
+      </li>
+      <li class="message-list__item message-list__item_recived">
+        У меня хорошо. Пошли курнем.
+        <span class="message-list__message-time">12:11</span>
+      </li>
+      <li class="message-list__item message-list__item_recived">
+        У меня хорошо. Пошли курнем.
+        <span class="message-list__message-time">12:11</span>
+      </li>
+    </li>
+    <li class="message-list__item message-list__item_owned">
+      Привет как дела?
+      <span class="message-list__message-time">12:10</span>
+    </li>
+    <li class="message-list__item message-list__item_recived">
+      У меня хорошо. Пошли курнем.
+      <span class="message-list__message-time">12:11</span>
+    </li>
+    <li class="message-list__item message-list__item_recived">
+      У меня хорошо. Пошли курнем.
+      <span class="message-list__message-time">12:11</span>
+    </li>
+    <li class="message-list__item message-list__item_recived">
+      У меня хорошо. Пошли курнем.
+      <span class="message-list__message-time">12:11</span>
+    </li>
+  </li>
+  <li class="message-list__item message-list__item_owned">
+    Привет как дела?
+    <span class="message-list__message-time">12:10</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li></li>
+  <li class="message-list__item message-list__item_owned">
+    Привет как дела?
+    <span class="message-list__message-time">12:10</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li>
+  <li class="message-list__item message-list__item_recived">
+    У меня хорошо. Пошли курнем.
+    <span class="message-list__message-time">12:11</span>
+  </li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+</li>
+<li class="message-list__item message-list__item_owned">
+  Привет как дела?
+  <span class="message-list__message-time">12:10</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+<li class="message-list__item message-list__item_recived">
+  У меня хорошо. Пошли курнем.
+  <span class="message-list__message-time">12:11</span>
+</li>
+
+        </ul>
+        <form action="" class="send-message-form">
+          <input type="text" class="send-message-form__input input" />
+          <button class="send-message-form__button">
+            <img class="send-message-form__icon" src="/src/img/send-message__button.png" alt="" />
           </button>
-        </div>
+        </form>
       </section>
     </main>
   </body>

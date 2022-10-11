@@ -54,3 +54,23 @@
   background: #117369;
   transition: 0.5s;
 }
+
+@media screen and (max-width: 768px), (max-height: 768px) {
+  .authorization-form {
+    width: 300px;
+    height: 300px;
+    gap: 22px;
+  }
+  .authorization-form__logo {
+    font-size: 32px;
+  }
+  .authorization-form__button {
+    background: #21978b;
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+  .authorization-form__input {
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+}
