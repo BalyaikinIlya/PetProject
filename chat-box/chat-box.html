@@ -38,6 +38,49 @@
       </section>
       <section class="chat-screen">
         <h2 class="hidden">Окно чата</h2>
+        <h3 class="chat-screen__title">Чат комнаты №1</h3>
+        <!-- Может что то лучше подойдет по семантике вместо div (message-list) -->
+        <div class="message-screen">
+          <ul class="users-joined">
+            <li class="users-joined__item">
+              Баляйкин Илья
+              <span class="users-joined__status_attendance_active"
+                >подключился к чату</span
+              >
+            </li>
+            <li class="users-joined__item">
+              Тремаскин Кирилл
+              <span class="users-joined__status_attendance_active"
+                >подключился к чату</span
+              >
+            </li>
+          </ul>
+          <ul class="message-list">
+            <li class="message-list__item interlocutor">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae iure doloremque ullam ab, ipsam, sequi explicabo
+              tempore, accusantium officia incidunt delectus! Nisi, similique,
+              cupiditate cum, repellendus sed animi odit accusamus illo aperiam
+              hic enim maxime repudiandae eveniet perferendis dolorem velit esse
+              ducimus quis ex. Voluptatem nesciunt nemo dolorem natus dolor?
+            </li>
+            <li class="message-list__item me">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              quisquam voluptates praesentium laborum nisi quasi minima autem,
+              veniam reprehenderit. Animi.
+            </li>
+          </ul>
+        </div>
+        <div class="send-message">
+          <input
+            placeholder="Начните что-то набирать. . ."
+            type="text"
+            class="send-message__input input"
+          />
+          <button class="send-message__button">
+            <img src="/src/img/send-message__button.png" alt="" />
+          </button>
+        </div>
       </section>
     </main>
   </body>
