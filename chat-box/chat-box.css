@@ -40,9 +40,67 @@ li {
 /* ♥♥♥♥♥♥♥♥ SIDEBAR ♥♥♥♥♥♥♥♥*/
 
 .sidebar {
-  background: #acacacc9;
+  background: #f4f4f4;
   height: 100vh;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 5px;
+}
+
+.sidebar__header {
+  font-size: 40px;
+  text-align: center;
+}
+
+.members {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+.members__item {
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border-bottom: 2px #e6e6e6 solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.members__item:hover {
+  color: #21978b;
+}
+
+.members__footer {
+  background: #d33030;
+  text-align: center;
+  padding: 10px 60px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.members__footer:hover {
+  transition: 0.5s;
+  background: #972121;
+}
+
+.members__header {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.members__username {
+}
+
+.members__avatar {
+  border-radius: 50px;
+  padding: 0;
 }
 
 /* ♥♥♥♥♥♥♥♥ CHAT WINDOW ♥♥♥♥♥♥♥♥*/
@@ -51,12 +109,23 @@ li {
   display: flex;
   flex-direction: column;
   max-height: 100vh;
-  flex: 3 1 auto;
+  flex: 4;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-
+.scroll-back {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 100px;
+  margin-right: 20px;
+  background: #dadada;
+  border-radius: 50px;
+  padding: 15px 15px;
+}
 .chat-window__header {
   border-bottom: 1px #e6e6e6 solid;
   font-size: 36px;
@@ -79,9 +148,9 @@ li {
 
 .message-list__item {
   padding: 20px 20px;
-  width: 50%;
   position: relative;
   text-align: left;
+  max-width: 60%;
 }
 
 .message-list__item_systemed_joined {
@@ -94,6 +163,7 @@ li {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  color: #fff;
 }
 
 .message-list__item_recived {
@@ -131,3 +201,5 @@ li {
   border: none;
   cursor: pointer;
 }
+
+/* ♥♥♥♥♥♥♥♥ MEDIA QUERIES  ♥♥♥♥♥♥♥♥*/
