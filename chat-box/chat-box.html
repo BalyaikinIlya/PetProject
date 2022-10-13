@@ -24,6 +24,9 @@
         <h3 class="sidebar__header logo">MyApp</h3>
         <ul class="members">
           <p class="members__header">Список участников</p>
+          <button class="members__invite-user-button">
+            Пригласить пользователей
+          </button>
           <li class="members__item">
             <img
               src="/src/img/avatar1.jpg"
@@ -33,6 +36,16 @@
               class="members__avatar"
             />
             <p class="members__username">Баляйкин Илья Сергеевич</p>
+            <img
+              src="/src/img/chat_owner_icon.png"
+              alt="Иконка владельца чата"
+              class="members__chat-owner"
+            />
+            <!-- Модальное меню управлением полльзователем -->
+            <!-- <ul class="members-modal-menu">
+              <li class="members-modal-menu__item">Исключить</li>
+              <li class="members-modal-menu__item">Заглушить</li>
+            </ul> -->
           </li>
           <li class="members__item">
             <img
@@ -43,6 +56,11 @@
               class="members__avatar"
             />
             <p class="members__username">Тремаскин Кирилл</p>
+            <!-- Модальное меню управлением полльзователем -->
+            <!-- <ul class="members-modal-menu">
+              <li class="members-modal-menu__item">Исключить</li>
+              <li class="members-modal-menu__item">Заглушить</li>
+            </ul> -->
           </li>
         </ul>
         <a
@@ -59,7 +77,7 @@
         <h2 class="hidden">Окно чата</h2>
         <div class="chat-window__header">
           <button class="chat-window__open-sidebar button">
-            <img src="/src/img/menu-icon.png" alt="" />
+            <img src="/src/img/menu-icon.png" alt="Открыть/закрыть сайдбар" />
           </button>
           <h3 class="chat-window__title">Чат комнаты №1</h3>
         </div>
@@ -84,13 +102,13 @@
               class="message-list__message-avatar message-list__message-avatar_owned"
               width="24px"
             />
-            <button class="message-list__message-menu">...</button>
+            <!-- <button class="message-list__message-menu">...</button>
             <ul class="message-list__modal-menu message-list__modal-menu_owned">
               <li class="message-list__modal-item">Ответить</li>
-              <!-- Если ты владелец сообщения  -->
+              
               <li class="message-list__modal-item">Удалить</li>
               <li class="message-list__modal-item">Изменить</li>
-            </ul>
+            </ul> -->
           </li>
 
           <li class="message-list__item message-list__item_recived">
@@ -109,15 +127,310 @@
               width="24px"
             />
             <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
-            <button class="message-list__message-menu">...</button>
-            <ul
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
               class="message-list__modal-menu message-list__modal-menu_recived"
             >
               <li class="message-list__modal-item">Ответить</li>
-              <!-- Если ты владелец сообщения  -->
+             
               <li class="message-list__modal-item">Удалить</li>
               <li class="message-list__modal-item">Изменить</li>
-            </ul>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              eum!
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              molestias dolore officia dolores ipsum numquam saepe possimus aut
+              reiciendis rerum.
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              eum!
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              molestias dolore officia dolores ipsum numquam saepe possimus aut
+              reiciendis rerum.
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              eum!
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              molestias dolore officia dolores ipsum numquam saepe possimus aut
+              reiciendis rerum.
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              eum!
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              molestias dolore officia dolores ipsum numquam saepe possimus aut
+              reiciendis rerum.
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              eum!
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
+              quos ipsam?
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+          <li class="message-list__item message-list__item_owned">
+            <p
+              class="message-list__message-text message-list__message-text_owned"
+            >
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+              commodi porro delectus veritatis perspiciatis laboriosam iste
+              pariatur quas, reprehenderit deserunt.
+              <span class="message-list__message-time">12:10</span>
+            </p>
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- <button class="message-list__message-menu">...</button>
+            <ul class="message-list__modal-menu message-list__modal-menu_owned">
+              <li class="message-list__modal-item">Ответить</li>
+              
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
+          </li>
+
+          <li class="message-list__item message-list__item_recived">
+            <p
+              class="message-list__message-text message-list__message-text_recived"
+            >
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut,
+              aperiam asperiores repudiandae, in inventore tenetur qui
+              temporibus autem sequi ex quis. Nisi iste atque, perspiciatis ea
+              repellendus suscipit eos eum repellat tempore error?
+              <span class="message-list__message-time">12:11</span>
+            </p>
+            <img
+              src="/src/img/avatar2.jpg"
+              alt=""
+              class="message-list__message-avatar message-list__message-avatar_owned"
+              width="24px"
+            />
+            <!-- Кнопка взаимодействия с сообщением будет появляться при наведении на элемент в данном блоке (пока не определеился на какой именно) -->
+            <!-- <button class="message-list__message-menu">...</button> -->
+            <!-- <ul
+              class="message-list__modal-menu message-list__modal-menu_recived"
+            >
+              <li class="message-list__modal-item">Ответить</li>
+             
+              <li class="message-list__modal-item">Удалить</li>
+              <li class="message-list__modal-item">Изменить</li>
+            </ul> -->
           </li>
         </ul>
         <form action="" class="send-message-form">
@@ -125,12 +438,42 @@
           <button class="send-message-form__button">
             <img
               class="send-message-form__icon"
+              src="/src/img/attach-icon.png"
+              alt="Прикрепить файл"
+            />
+          </button>
+          <button class="send-message-form__button">
+            <img
+              class="send-message-form__icon"
               src="/src/img/send-message__button.png"
-              alt=""
+              alt="Кнопка отправить сообщение"
             />
           </button>
         </form>
       </section>
+
+      <!-- Модальное окно копирования приглашения в комнату -->
+
+      <!-- <div class="global-modal user-invite-modal">
+        <div class="global-modal__wrapper">
+          <input
+            readonly
+            value="hhtps://my.app/join-chat?chatId=1"
+            type="text"
+            class="global-modal__invite-link input"
+          />
+          <button class="global-modal__button button">Копировать</button>
+        </div> -->
+
+      <!-- Модальное окно подтверждения выхода из чата -->
+
+      <!-- <div class="global-modal exit-confirm-modal">
+        <div class="global-modal__wrapper">
+          <p class="global-modal__header">Вы точно хотите выйти из чата?</p>
+          <button class="global-modal__button button">Да</button>
+          <button class="global-modal__button button">Отмена</button>
+        </div>
+      </div> -->
     </main>
   </body>
 </html>

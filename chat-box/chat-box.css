@@ -15,12 +15,12 @@ ul {
   padding: 0;
 }
 
-p {
-  margin: 0;
-}
-
 li {
   list-style: none;
+}
+
+p {
+  margin: 0;
 }
 
 .hidden {
@@ -38,15 +38,58 @@ li {
 }
 
 ::-webkit-scrollbar {
-  width: 0px; /* ширина для вертикального скролла */
+  width: 0px;
+}
+
+.global-modal {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.global-modal__wrapper {
+  background: #91ccee;
+  padding: 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.global-modal__invite-link {
+  font-size: 24px;
+  padding: 10px;
+  border: 2px #2f8f84 solid;
+}
+
+.global-modal {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.global-modal__button {
+  background: #21978b;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  margin-top: 10px;
+  width: 40%;
+}
+
+.global-modal__button:hover {
+  background: #21978bb9;
 }
 
 /* ♥♥♥♥♥♥♥♥ SIDEBAR ♥♥♥♥♥♥♥♥*/
 
 .sidebar {
   background: #f4f4f4;
-  height: 100vh;
-  flex: 1;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -63,7 +106,6 @@ li {
 .members {
   flex: 1 1 auto;
   overflow-y: scroll;
-  align-items: center;
 }
 
 .members__item {
@@ -75,9 +117,10 @@ li {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
-.members__item:hover {
+.members__username:hover {
   color: #21978b;
 }
 
@@ -99,12 +142,39 @@ li {
   font-size: 24px;
   text-align: center;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .members__avatar {
   border-radius: 50px;
-  padding: 0;
+}
+
+.members__invite-user-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #15b860;
+}
+
+.members__invite-user-button:hover {
+  color: #21978b;
+}
+
+.members-modal-menu {
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  background: #d8d8d8;
+  padding: 0 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.members-modal-menu__item:hover {
+  color: #21978b;
 }
 
 /* ♥♥♥♥♥♥♥♥ CHAT WINDOW ♥♥♥♥♥♥♥♥*/
@@ -112,9 +182,8 @@ li {
 .chat-window {
   display: flex;
   flex-direction: column;
-  flex: 4;
+  flex: 1 1 auto;
   gap: 20px;
-  justify-content: center;
   align-items: center;
   position: relative;
   height: 100vh;
@@ -133,8 +202,6 @@ li {
 
 .chat-window__header {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   border-bottom: 1px #e6e6e6 solid;
   width: 100%;
   padding: 10px 10px;
@@ -154,9 +221,9 @@ li {
 /* ♥♥♥♥♥♥♥♥  MESSAGE LIST ♥♥♥♥♥♥♥♥*/
 
 .message-list {
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   overflow-y: scroll;
-  width: 84%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -169,7 +236,6 @@ li {
 .message-list__item {
   padding: 20px 20px;
   position: relative;
-  text-align: left;
   display: flex;
   gap: 10px;
 }
@@ -181,12 +247,10 @@ li {
 .message-list__item_owned {
   align-self: flex-end;
   flex-direction: row-reverse;
-  width: 100%;
 }
 
 .message-list__item_recived {
   align-self: flex-start;
-  width: 100%;
 }
 
 .message-list__message-text {
@@ -231,12 +295,12 @@ li {
 }
 
 .message-list__modal-menu {
-  background: #07a4ff15;
+  background: #07a4ff18;
   border-radius: 20px;
-  padding: 10px 10px;
+  padding: 5px 10px;
   font-weight: 600;
-  font-size: 12px;
-  align-self: flex-start;
+  font-size: 14px;
+  align-self: flex-end;
 }
 
 .message-list__modal-item {
@@ -245,12 +309,6 @@ li {
 
 .message-list__modal-item:hover {
   color: #21978b;
-}
-
-.message-list__modal-menu_recived {
-}
-
-.message-list__modal-menu_owned {
 }
 
 /* ♥♥♥♥♥♥♥♥ SEND MESSAGE FORM ♥♥♥♥♥♥♥♥*/
