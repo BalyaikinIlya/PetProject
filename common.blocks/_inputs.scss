@@ -3,6 +3,7 @@
 $primary-focus-color: #2f8f84;
 $primary-border-color: #000;
 .primary-input {
+  @include input-format;
   border-radius: 50px;
   border: 1px $primary-border-color solid;
   &:focus {
@@ -12,10 +13,10 @@ $primary-border-color: #000;
 }
 
 .send-message-form__input {
-  @include input-format;
   width: 80%;
 }
 
 .authorization-form__input {
-  @include input-format;
+}
+.invite-modal__link {
 }

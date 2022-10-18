@@ -1,0 +1,42 @@
+@mixin button-format {
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+@mixin input-format {
+  font-size: 18px;
+  padding: 10px 40px;
+}
+
+@mixin popup-format {
+  background: #21978b;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  &__item:hover {
+    color: #000;
+  }
+}
+
+@mixin modal-format {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin message-format {
+  padding: 20px 20px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}

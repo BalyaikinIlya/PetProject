@@ -1,10 +1,10 @@
 @charset "UTF-8";
-@import "/common.blocks/logo.css";
 .primary-button {
   cursor: pointer;
   border: none;
   text-decoration: none;
   border-radius: 50px;
+  background: #21978b;
   color: #fff;
   font-size: 16px;
 }
@@ -12,7 +12,7 @@
 .members__footer {
   background: #d33030;
   text-align: center;
-  padding: 10px 60px;
+  padding: 10px 40px;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -29,9 +29,11 @@
   bottom: 0;
   margin-bottom: 100px;
   margin-right: 20px;
-  background: #dadada;
-  border-radius: 50px;
   padding: 15px 15px;
+}
+.scroll-back:hover {
+  background: #117369;
+  transition: 0.5s;
 }
 
 .members__invite-user-button {
@@ -46,7 +48,6 @@
 }
 
 .authorization-form__button {
-  background: #21978b;
   font-size: 32px;
   padding: 10px 40px;
 }
@@ -59,17 +60,25 @@
   background: none;
 }
 
-.global-modal__button {
-  background: #21978b;
-  padding: 10px;
-  margin-top: 10px;
-  width: 40%;
+.invite-modal__copy-button {
+  padding: 10px 40px;
 }
-.global-modal__button:hover {
+.invite-modal__copy-button:hover {
   background: #117369;
+  transition: 0.5s;
+}
+
+.exit-confirm-modal__button {
+  padding: 10px 40px;
+}
+.exit-confirm-modal__button:hover {
+  background: #117369;
+  transition: 0.5s;
 }
 
 .primary-input {
+  font-size: 18px;
+  padding: 10px 40px;
   border-radius: 50px;
   border: 1px #000 solid;
 }
@@ -79,14 +88,144 @@
 }
 
 .send-message-form__input {
-  font-size: 18px;
-  padding: 10px 40px;
   width: 80%;
 }
 
-.authorization-form__input {
-  font-size: 18px;
-  padding: 10px 40px;
+.primary-logo {
+  font-family: "Kaushan Script", cursive;
+  margin: 0;
+  font-weight: 400;
+}
+
+.message-popup {
+  background: #21978b;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  align-self: flex-end;
+}
+.message-popup__item:hover {
+  color: #000;
+}
+
+.users-popup {
+  background: #21978b;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+}
+.users-popup__item:hover {
+  color: #000;
+}
+
+.primary-modal {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.global-modal__wrapper {
+  background: #91ccee;
+  padding: 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.primary-message {
+  padding: 20px 20px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.message_owned {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message_recived {
+  align-self: flex-start;
+}
+
+.message__text {
+  padding: 20px 20px;
+  position: relative;
+  max-width: 50%;
+}
+
+.message__text_systemed_joined {
+  color: #15b860;
+}
+
+.message__text_systemed_left {
+  color: #d33030;
+}
+
+.message__text_owned {
+  background: #21978b;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #fff;
+}
+
+.message__text_recived {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #d8d8d8;
+}
+
+.message__time {
+  position: absolute;
+  bottom: 5px;
+  right: 14px;
+  font-size: 12px;
+}
+
+.message__avatar {
+  align-self: flex-end;
+  border-radius: 50px;
+}
+
+.members__item {
+  font-size: 16px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border-bottom: 1px #e6e6e6 solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.members__username:hover {
+  color: #21978b;
+}
+
+.members__header {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.members__avatar {
+  border-radius: 50px;
 }
 
 h1,
@@ -111,13 +250,18 @@ p {
   margin: 0;
 }
 
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
 .hidden {
   display: none;
 }
 
-.chat-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
+.exit-confirm-modal__header {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .chat-app {
@@ -129,40 +273,10 @@ p {
   width: 0px;
 }
 
-.global-modal {
-  z-index: 2000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.global-modal__wrapper {
-  background: #91ccee;
-  padding: 10px 10px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.global-modal__invite-link {
-  font-size: 24px;
-  padding: 10px;
-  border: 2px #2f8f84 solid;
-}
-
-.global-modal {
-  font-size: 18px;
-  font-weight: 600;
-}
-
 /* ♥♥♥♥♥♥♥♥ SIDEBAR ♥♥♥♥♥♥♥♥*/
 .sidebar {
   background: #f4f4f4;
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -180,56 +294,15 @@ p {
   overflow-y: scroll;
 }
 
-.members__item {
-  font-size: 20px;
-  padding: 5px 20px;
-  border-radius: 5px;
-  border-bottom: 2px #e6e6e6 solid;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-}
-
-.members__username:hover {
-  color: #21978b;
-}
-
-.members__header {
-  font-size: 24px;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.members__avatar {
-  border-radius: 50px;
-}
-
-.members-modal-menu {
-  margin-right: 10px;
-  position: absolute;
-  right: 0;
-  background: #d8d8d8;
-  padding: 0 10px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
-.members-modal-menu__item:hover {
-  color: #21978b;
-}
-
 /* ♥♥♥♥♥♥♥♥ CHAT WINDOW ♥♥♥♥♥♥♥♥*/
 .chat-window {
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1;
   gap: 20px;
   align-items: center;
   position: relative;
-  height: 100vh;
 }
 
 .chat-window__header {
@@ -252,93 +325,21 @@ p {
 
 /* ♥♥♥♥♥♥♥♥  MESSAGE LIST ♥♥♥♥♥♥♥♥*/
 .message-list {
-  /* flex: 1 1 auto; */
+  flex: 1 1 auto;
   overflow-y: scroll;
+  height: 100%;
   width: 90%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  height: min-content;
   /* Убираю скролл для Firefox (не знаю нужно ли вообще такое) */
   scrollbar-width: none;
 }
 
-.message-list__item {
-  padding: 20px 20px;
-  position: relative;
-  display: flex;
-  gap: 10px;
-}
-
-.message-list__item_systemed_joined {
-  color: #15b860;
-}
-
-.message-list__item_owned {
-  align-self: flex-end;
-  flex-direction: row-reverse;
-}
-
-.message-list__item_recived {
-  align-self: flex-start;
-}
-
-.message-list__message-text {
-  padding: 20px 20px;
-  position: relative;
-  max-width: 50%;
-}
-
-.message-list__message-text_owned {
-  background: #21978b;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  color: #fff;
-}
-
-.message-list__message-text_recived {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background: #d8d8d8;
-}
-
-.message-list__message-time {
-  position: absolute;
-  bottom: 5px;
-  right: 14px;
-  font-size: 12px;
-}
-
-.message-list__message-avatar {
-  align-self: flex-end;
-  border-radius: 50px;
-}
-
-.message-list__message-menu {
-  align-self: flex-end;
-  border: none;
-  background: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.message-list__modal-menu {
-  background: rgba(7, 164, 255, 0.0941176471);
-  border-radius: 20px;
-  padding: 5px 10px;
-  font-weight: 600;
-  font-size: 14px;
-  align-self: flex-end;
-}
-
-.message-list__modal-item {
-  cursor: pointer;
-}
-
-.message-list__modal-item:hover {
-  color: #21978b;
+.message-list > :first-child {
+  margin-top: auto !important;
 }
 
 /* ♥♥♥♥♥♥♥♥ SEND MESSAGE FORM ♥♥♥♥♥♥♥♥*/

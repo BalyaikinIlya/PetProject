@@ -1,0 +1,14 @@
+@import "_mixins";
+
+.primary-message {
+  @include message-format;
+}
+
+.message_owned {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message_recived {
+  align-self: flex-start;
+}

@@ -1,0 +1,12 @@
+@import "_mixins";
+
+.primary-modal {
+  @include modal-format;
+}
+
+.global-modal__wrapper {
+  background: #91ccee;
+  padding: 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+}
