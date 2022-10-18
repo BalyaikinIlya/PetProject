@@ -20,6 +20,6 @@ ___
 ___
 
 ### 🔗 Прочие ссылки
-https://www.figma.com/file/u3PTl4q8NWNOu5U7BDHVyO/Chat-App?node-id=0%3A1 - дизайн приложения
+
 
 
