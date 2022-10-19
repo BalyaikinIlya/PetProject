@@ -144,6 +144,11 @@
   text-align: center;
 }
 
+.exit-confirm-modal__header {
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .primary-message {
   padding: 20px 20px;
   position: relative;
@@ -228,6 +233,66 @@
   border-radius: 50px;
 }
 
+.chat-window {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.chat-window__header {
+  display: flex;
+  border-bottom: 1px #e6e6e6 solid;
+  width: 100%;
+  padding: 10px 10px;
+  gap: 20px;
+}
+
+.chat-window__open-sidebar {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-window__title {
+  font-size: 36px;
+}
+
+.sidebar {
+  background: #f4f4f4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 5px;
+}
+
+.sidebar__header {
+  font-size: 40px;
+  text-align: center;
+}
+
+.message-list {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  height: min-content;
+  /* Убираю скролл для Firefox (не знаю нужно ли вообще такое) */
+  scrollbar-width: none;
+}
+
+.message-list > :first-child {
+  margin-top: auto !important;
+}
+
 h1,
 h2,
 h3,
@@ -259,9 +324,8 @@ body {
   display: none;
 }
 
-.exit-confirm-modal__header {
-  font-size: 24px;
-  font-weight: 600;
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .chat-app {
@@ -269,77 +333,10 @@ body {
   overflow: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-/* ♥♥♥♥♥♥♥♥ SIDEBAR ♥♥♥♥♥♥♥♥*/
-.sidebar {
-  background: #f4f4f4;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0 5px;
-}
-
-.sidebar__header {
-  font-size: 40px;
-  text-align: center;
-}
-
 /* ♥♥♥♥♥♥♥♥ MEMBERS ♥♥♥♥♥♥♥♥*/
 .members {
   flex: 1 1 auto;
   overflow-y: scroll;
-}
-
-/* ♥♥♥♥♥♥♥♥ CHAT WINDOW ♥♥♥♥♥♥♥♥*/
-.chat-window {
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 20px;
-  align-items: center;
-  position: relative;
-}
-
-.chat-window__header {
-  display: flex;
-  border-bottom: 1px #e6e6e6 solid;
-  width: 100%;
-  padding: 10px 10px;
-  gap: 20px;
-}
-
-.chat-window__open-sidebar {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.chat-window__title {
-  font-size: 36px;
-}
-
-/* ♥♥♥♥♥♥♥♥  MESSAGE LIST ♥♥♥♥♥♥♥♥*/
-.message-list {
-  flex: 1 1 auto;
-  overflow-y: scroll;
-  height: 100%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  height: min-content;
-  /* Убираю скролл для Firefox (не знаю нужно ли вообще такое) */
-  scrollbar-width: none;
-}
-
-.message-list > :first-child {
-  margin-top: auto !important;
 }
 
 /* ♥♥♥♥♥♥♥♥ SEND MESSAGE FORM ♥♥♥♥♥♥♥♥*/
@@ -349,12 +346,6 @@ body {
   width: 100%;
   justify-content: center;
   margin-bottom: 20px;
-}
-
-@media screen and (max-width: 648px) {
-  .sidebar {
-    display: none;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

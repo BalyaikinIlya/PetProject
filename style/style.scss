@@ -7,46 +7,10 @@
 @use "../common.blocks/message";
 @use "../common.blocks/message-inner";
 @use "../common.blocks/members-inner";
-
-$primary-border-bottom: 1px #e6e6e6 solid;
-$primary-sidebar-color: #f4f4f4;
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-p {
-  margin: 0;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-}
-
-.hidden {
-  display: none;
-}
-
-// MODAL
-
-.exit-confirm-modal__header {
-  font-size: 24px;
-  font-weight: 600;
-}
+@use "../common.blocks/chat-window";
+@use "../common.blocks/sidebar";
+@use "../common.blocks/message-list";
+@use "../common.blocks/utility";
 
 // CHAT-BOX
 
@@ -55,82 +19,11 @@ body {
   overflow: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-/* ♥♥♥♥♥♥♥♥ SIDEBAR ♥♥♥♥♥♥♥♥*/
-
-.sidebar {
-  background: $primary-sidebar-color;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0 5px;
-}
-
-.sidebar__header {
-  font-size: 40px;
-  text-align: center;
-}
-
 /* ♥♥♥♥♥♥♥♥ MEMBERS ♥♥♥♥♥♥♥♥*/
 
 .members {
   flex: 1 1 auto;
   overflow-y: scroll;
-}
-
-/* ♥♥♥♥♥♥♥♥ CHAT WINDOW ♥♥♥♥♥♥♥♥*/
-
-.chat-window {
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 20px;
-  align-items: center;
-  position: relative;
-}
-
-.chat-window__header {
-  display: flex;
-  border-bottom: $primary-border-bottom;
-  width: 100%;
-  padding: 10px 10px;
-  gap: 20px;
-}
-
-.chat-window__open-sidebar {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.chat-window__title {
-  font-size: 36px;
-}
-
-/* ♥♥♥♥♥♥♥♥  MESSAGE LIST ♥♥♥♥♥♥♥♥*/
-
-.message-list {
-  flex: 1 1 auto;
-  overflow-y: scroll;
-  height: 100%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  height: min-content;
-  /* Убираю скролл для Firefox (не знаю нужно ли вообще такое) */
-  scrollbar-width: none;
-}
-
-//фича для прижатия сообщений к низу окна чата
-.message-list > :first-child {
-  margin-top: auto !important;
 }
 
 /* ♥♥♥♥♥♥♥♥ SEND MESSAGE FORM ♥♥♥♥♥♥♥♥*/
@@ -141,10 +34,4 @@ body {
   width: 100%;
   justify-content: center;
   margin-bottom: 20px;
-}
-
-@media screen and (max-width: 648px) {
-  .sidebar {
-    display: none;
-  }
 }

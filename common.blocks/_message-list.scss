@@ -1,0 +1,18 @@
+.message-list {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  height: min-content;
+  /* Убираю скролл для Firefox (не знаю нужно ли вообще такое) */
+  scrollbar-width: none;
+}
+
+//фича для прижатия сообщений к низу окна чата
+.message-list > :first-child {
+  margin-top: auto !important;
+}

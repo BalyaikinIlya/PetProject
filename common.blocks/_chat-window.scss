@@ -1,0 +1,29 @@
+$primary-border-bottom: 1px #e6e6e6 solid;
+
+.chat-window {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.chat-window__header {
+  display: flex;
+  border-bottom: $primary-border-bottom;
+  width: 100%;
+  padding: 10px 10px;
+  gap: 20px;
+}
+
+.chat-window__open-sidebar {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-window__title {
+  font-size: 36px;
+}
