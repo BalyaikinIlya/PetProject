@@ -1,0 +1,50 @@
+@import "mixins";
+
+.general-body {
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  height: 100vh;
+
+  &__modal {
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include mobile {
+    &__users {
+      display: none;
+    }
+    // &__chat {
+    //   display: none;
+    // }
+  }
+
+  @include desktop {
+    grid-template-areas: "layout__users layout__chat";
+    grid-template-columns: 320px 1fr;
+
+    &__users {
+      grid-area: layout__users;
+      background: #fcfcfc;
+      border-right: 1px solid #dfdfdf;
+    }
+
+    &__chat {
+      grid-area: layout__chat;
+    }
+  }
+}

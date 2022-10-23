@@ -1,0 +1,16 @@
+.exit {
+  padding: 10px 10px;
+  &__button {
+    width: 100%;
+    margin-left: auto;
+    border: none;
+    background: #d33030;
+    font-size: 18px;
+    padding: 10px 60px;
+    border-radius: 20px;
+    color: #fff;
+    &:hover {
+      background: #972121;
+    }
+  }
+}

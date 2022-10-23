@@ -1,0 +1,59 @@
+.message {
+  list-style: none;
+  max-width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__text {
+    margin: 0;
+    &_system {
+      text-align: center;
+    }
+  }
+  &__time {
+    font-size: 12px;
+    margin-left: auto;
+  }
+  &__avatar_from {
+    align-self: flex-end;
+  }
+
+  &_system {
+    align-self: center;
+    &_join {
+      color: #21978b;
+    }
+    &_left {
+      color: #d33030;
+    }
+  }
+
+  &_from {
+    align-self: flex-end;
+    color: #fff;
+  }
+  &_to {
+    align-self: flex-start;
+    color: #000;
+  }
+
+  &__inner-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    &_from {
+      background: #21978b;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    &_to {
+      background: #d8d8d8;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+}

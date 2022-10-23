@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Команта чата №1</title>
+  </head>
+  <body class="general-body">
+    <main class="layout">
+      <section class="layout__users users box-scroll">
+        <header class="users__header box-scroll__header header">
+          <img
+            src="src/img/logo_transparent.png"
+            alt=""
+            class="users__logo logo_users"
+          />
+        </header>
+        <ul class="users__users-list users-list box-scroll__content">
+          <p class="users-list__tittle">Список участников</p>
+          <button class="users-list__invite-button button">
+            Пригласить пользователей
+          </button>
+          <li class="users-list__item user">
+            <img
+              src="/src/img/avatar1.jpg"
+              alt=""
+              class="user__avatar avatar avatar_users-list"
+            />
+            <span class="user__name">Баляйкин Илья </span>
+            <img
+              src="src/icon/chat_owner_icon.png"
+              alt=""
+              class="user__owner-status"
+            />
+          </li>
+        </ul>
+        <footer class="box-scroll__footer exit">
+          <button class="exit__button">Покинуть чат</button>
+        </footer>
+      </section>
+      <section class="layout__chat chat box-scroll">
+        <header class="chat__header header box-scroll__header">
+          <img
+            src="src\icon\menu-icon.png"
+            alt=""
+            class="chat__menu-button button"
+          />
+          <span class="chat__tittle">Чат комнаты №1</span>
+        </header>
+        <ul class="messages-list box-scroll__content">
+          <li
+            class="messages-list__message message message_system message_system_join"
+          >
+            <div class="message__inner-content">
+              <p class="message__text message__text_system">
+                Пользователь 1 присоединился
+              </p>
+            </div>
+          </li>
+          <li
+            class="messages-list__message message message_system message_system_join"
+          >
+            <div class="message__inner-content">
+              <p class="message__text message__text_system">
+                Пользователь 2 присоединился
+              </p>
+            </div>
+          </li>
+          <li class="messages-list__message message message_from">
+            <div class="message__inner-content message__inner-content_from">
+              <p class="message__text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Libero, atque aspernatur aut, modi magnam sequi ut laborum a
+                facere recusandae molestiae nam quod suscipit aperiam
+                necessitatibus reprehenderit. Voluptas mollitia expedita quaerat
+                asperiores sint sed blanditiis, totam placeat enim quisquam
+                molestias sit repudiandae amet laboriosam ut? Est tempora cum at
+                repellendus ipsa temporibus accusamus nihil fuga consequuntur
+                magni voluptatum doloribus fugiat facere omnis non quis saepe
+                sapiente delectus optio autem, harum suscipit eligendi id! Quod
+                sequi quae quibusdam aut nostrum voluptates, rerum ipsam dicta
+                at sunt eos perferendis nulla saepe ipsum? Soluta perspiciatis,
+                sapiente a qui expedita in accusantium totam debitis tempore
+                iste nulla ex quia! Sed maxime quos architecto. Soluta
+                temporibus nemo repellat modi! Numquam qui, quos debitis
+                architecto quia asperiores, sapiente, veritatis accusamus culpa
+                laborum quasi expedita enim eius. Iste minus rerum ex placeat,
+                necessitatibus ullam cumque qui dolores sint animi. Dolorem
+                totam nostrum accusamus numquam repellat, ea molestiae
+                voluptates nam similique esse ipsa asperiores quod culpa
+                voluptate rerum nisi, laborum beatae repellendus ducimus unde
+                provident. Provident a, fugit cupiditate ullam illum corporis
+                deleniti necessitatibus animi debitis nobis beatae et error,
+                aspernatur sint velit? Laboriosam, totam qui. Voluptas ad
+                deserunt debitis maxime accusamus doloribus dolorum, nulla
+                similique incidunt consectetur.
+              </p>
+              <span class="message__time">12:12</span>
+            </div>
+            <img
+              class="message__avatar_from avatar avatar_chat"
+              src="/src/img/avatar1.jpg"
+              alt="12"
+            />
+          </li>
+          <li class="messages-list__message message message_to">
+            <div class="message__inner-content message__inner-content_to">
+              <p class="message__text">Привет, у меня все хорошо</p>
+              <span class="message__time">12:12</span>
+            </div>
+            <img
+              class="message__avatar avatar avatar_chat"
+              src="/src/img/avatar1.jpg"
+              alt="12"
+            />
+          </li>
+        </ul>
+        <footer class="chat__footer">
+          <form class="chat__form send-form" action="">
+            <input class="send-form__input_text" type="text" />
+            <input
+              id="send-form__file"
+              class="send-form__input_file"
+              type="file"
+            />
+            <label class="button" for="send-form__file">
+              <img
+                class="send-form__button"
+                width="24px"
+                src="src\icon\attach-icon.png"
+                alt=""
+              />
+            </label>
+            <button class="button">
+              <img
+                width="24px"
+                class="send-form__button"
+                src="src/icon/send-message__button.png"
+                alt=""
+              />
+            </button>
+          </form>
+        </footer>
+      </section>
+      <!-- TO DO -->
+      <div class="layout__modal modal-wrapper">
+        <div class="layout__modal exit-confirm">
+          <span class="exit-confirm__tittle">Вы точно хотите выйти?</span>
+          <button class="button">Да</button>
+          <button class="button">Нет</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

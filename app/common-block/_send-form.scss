@@ -1,0 +1,58 @@
+@import "mixins";
+
+@include desktop {
+  .send-form {
+    padding: 10px 20px;
+    border-top: 1px solid #dfdfdf;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__input_text {
+      width: 100%;
+      flex: 1 1 auto;
+      font-size: 16px;
+      padding: 10px 10px;
+      border-radius: 20px;
+      outline: none;
+      border: 1px #000 solid;
+      &:focus {
+        border: 1px #2f8f84 solid;
+      }
+    }
+    &__input_file {
+      display: none;
+    }
+    &__button {
+      width: 32px;
+    }
+  }
+}
+
+@include mobile {
+  .send-form {
+    padding: 10px 20px;
+    border-top: 1px solid #dfdfdf;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    &__input_text {
+      width: 100%;
+      flex: 1 1 auto;
+      font-size: 12px;
+      padding: 5px 5px;
+      border-radius: 20px;
+      outline: none;
+      border: 1px #000 solid;
+      &:focus {
+        border: 1px #2f8f84 solid;
+      }
+    }
+    &__input_file {
+      display: none;
+    }
+    &__button {
+      width: 24px;
+    }
+  }
+}

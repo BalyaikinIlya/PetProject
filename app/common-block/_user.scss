@@ -1,0 +1,10 @@
+.user {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #dfdfdf solid;
+  gap: 10px;
+  padding: 5px 20px;
+  &__name {
+    font-size: 18px;
+  }
+}

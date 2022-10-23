@@ -1,0 +1,12 @@
+.chat {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  &__tittle {
+    font-size: 24px;
+  }
+}
