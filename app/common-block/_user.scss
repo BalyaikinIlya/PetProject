@@ -1,10 +1,15 @@
 .user {
   display: flex;
   align-items: center;
-  border-bottom: 1px #dfdfdf solid;
+  border-bottom: var(--primary-border);
   gap: 10px;
   padding: 5px 20px;
+  position: relative;
   &__name {
     font-size: 18px;
+    &:hover {
+      color: var(--primary-hover-color);
+      cursor: pointer;
+    }
   }
 }

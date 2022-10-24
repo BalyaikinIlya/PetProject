@@ -1,0 +1,14 @@
+.user-setting {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  &__item {
+    &:hover {
+      color: var(-primary-hover-color);
+    }
+  }
+}

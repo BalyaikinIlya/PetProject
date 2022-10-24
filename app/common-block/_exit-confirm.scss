@@ -1,2 +1,16 @@
 .exit-confirm {
+  background: --primary-modal-inner-bg-color;
+  padding: 10px 10px;
+  font-size: 24px;
+  border-radius: 20px;
+  color: var(--additional-text-color);
+
+  &__button {
+    color: var(--additional-text-color);
+    font-size: 20px;
+
+    &:hover {
+      color: var(--primary-text-color);
+    }
+  }
 }

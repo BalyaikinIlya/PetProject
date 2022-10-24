@@ -19,7 +19,7 @@
   </head>
   <body class="general-body">
     <main class="layout">
-      <section class="layout__users users box-scroll">
+      <section class="layout__users column users box-scroll">
         <header class="users__header box-scroll__header header">
           <img
             src="src/img/logo_transparent.png"
@@ -27,18 +27,23 @@
             class="users__logo logo_users"
           />
         </header>
-        <ul class="users__users-list users-list box-scroll__content">
+        <ul class="users__users-list users-list box-scroll__content column">
           <p class="users-list__tittle">Список участников</p>
           <button class="users-list__invite-button button">
             Пригласить пользователей
           </button>
           <li class="users-list__item user">
             <img
-              src="/src/img/avatar1.jpg"
+              src="src/img/avatar1.jpg"
               alt=""
               class="user__avatar avatar avatar_users-list"
             />
             <span class="user__name">Баляйкин Илья </span>
+            <!-- При нажатии на имя будут скрываться имя и икона (если есть) -->
+            <!-- <ul class="user__popup user-setting column">
+              <li class="user-setting__item">Исключить</li>
+              <li class="user-setting__item">Переименовать</li>
+            </ul> -->
             <img
               src="src/icon/chat_owner_icon.png"
               alt=""
@@ -47,10 +52,10 @@
           </li>
         </ul>
         <footer class="box-scroll__footer exit">
-          <button class="exit__button">Покинуть чат</button>
+          <a href="index.html" class="exit__button">Покинуть чат</a>
         </footer>
       </section>
-      <section class="layout__chat chat box-scroll">
+      <section class="layout__chat chat box-scroll column">
         <header class="chat__header header box-scroll__header">
           <img
             src="src\icon\menu-icon.png"
@@ -59,9 +64,9 @@
           />
           <span class="chat__tittle">Чат комнаты №1</span>
         </header>
-        <ul class="messages-list box-scroll__content">
+        <ul class="messages-list box-scroll__content column">
           <li
-            class="messages-list__message message message_system message_system_join"
+            class="messages-list__message message message_system message_system_join column"
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
@@ -70,7 +75,7 @@
             </div>
           </li>
           <li
-            class="messages-list__message message message_system message_system_join"
+            class="messages-list__message message message_system message_system_join column"
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
@@ -78,7 +83,7 @@
               </p>
             </div>
           </li>
-          <li class="messages-list__message message message_from">
+          <li class="messages-list__message message message_from column">
             <div class="message__inner-content message__inner-content_from">
               <p class="message__text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -109,22 +114,49 @@
               </p>
               <span class="message__time">12:12</span>
             </div>
+            <!-- <ul class="message__popup message-setting">
+              <li class="message-setting__item">Ответить</li>
+              <li class="message-setting__item">Удалить</li>
+            </ul> -->
             <img
               class="message__avatar_from avatar avatar_chat"
-              src="/src/img/avatar1.jpg"
+              src="src/img/avatar1.jpg"
               alt="12"
             />
           </li>
-          <li class="messages-list__message message message_to">
+          <li class="messages-list__message message message_to column">
             <div class="message__inner-content message__inner-content_to">
               <p class="message__text">Привет, у меня все хорошо</p>
               <span class="message__time">12:12</span>
             </div>
             <img
               class="message__avatar avatar avatar_chat"
-              src="/src/img/avatar1.jpg"
+              src="src/img/avatar1.jpg"
               alt="12"
             />
+            <!-- <ul class="message__popup message-setting message-setting_to">
+              <li class="message-setting__item">Ответить</li>
+              <li class="message-setting__item">Удалить</li>
+            </ul> -->
+          </li>
+          <li class="messages-list__message message message_to column">
+            <div class="message__inner-content message__inner-content_to">
+              <img
+                class="message__image"
+                src="src/img/message_img.jpg"
+                alt="Название файла"
+              />
+              <span class="message__time">12:12</span>
+            </div>
+            <img
+              class="message__avatar avatar avatar_chat"
+              src="src/img/avatar1.jpg"
+              alt="12"
+            />
+            <!-- <ul class="message__popup message-setting message-setting_to">
+              <li class="message-setting__item">Ответить</li>
+              <li class="message-setting__item">Удалить</li>
+            </ul> -->
           </li>
         </ul>
         <footer class="chat__footer">
@@ -154,14 +186,25 @@
           </form>
         </footer>
       </section>
-      <!-- TO DO -->
-      <div class="layout__modal modal-wrapper">
-        <div class="layout__modal exit-confirm">
+      <!-- <div class="layout__modal column modal-wrapper">
+        <div class="exit-confirm">
           <span class="exit-confirm__tittle">Вы точно хотите выйти?</span>
-          <button class="button">Да</button>
-          <button class="button">Нет</button>
+          <button class="button exit-confirm__button">Да</button>
+          <button class="button exit-confirm__button">Нет</button>
         </div>
-      </div>
+      </div> -->
+
+      <!-- <div class="layout__modal column modal-wrapper">
+        <div class="invite-link">
+          <input
+            readonly
+            class="invite-link__input"
+            value="some/copy/link"
+            type="text"
+          />
+          <button class="button invite-link__button">Копировать</button>
+        </div>
+      </div> -->
     </main>
   </body>
 </html>

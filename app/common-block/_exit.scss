@@ -1,16 +1,20 @@
 .exit {
   padding: 10px 10px;
+  display: flex;
+  text-align: center;
   &__button {
     width: 100%;
     margin-left: auto;
     border: none;
-    background: #d33030;
+    background: var(--primary-exit-btn-color);
     font-size: 18px;
     padding: 10px 60px;
     border-radius: 20px;
-    color: #fff;
+    color: var(--additional-text-color);
+    text-decoration: none;
+    cursor: pointer;
     &:hover {
-      background: #972121;
+      background: var(--hover-exit-btn-color);
     }
   }
 }

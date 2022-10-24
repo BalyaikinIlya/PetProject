@@ -1,3 +1,4 @@
+@import "common-block/column";
 @import "common-block/box-scroll";
 @import "common-block/layout";
 @import "common-block/logo";
@@ -11,3 +12,31 @@
 @import "common-block/send-form";
 @import "common-block/button";
 @import "common-block/exit-confirm";
+@import "common-block/invite-link";
+@import "common-block/user-setting";
+@import "common-block/message-setting";
+@import "common-block/authorization";
+@import "common-block/auth-form";
+
+:root {
+  --primary-bg-color: #fff;
+  --additional-bg-color: #eeeeee;
+  --primary-modal-bg-color: #dfdfdf8f;
+  --primary-text-color: #000;
+  --additional-text-color: #fff;
+  --additional-second-color: #21978b;
+  --primary-system-message-text-color: #21978b;
+  --additional-system-message-text-color: #d33030;
+  --primary-log-in-button-color: #21978b;
+  --primary-from-message-color: #21978b;
+  --primary-to-messsage-color: #d8d8d8;
+  --primary-from-message-text-color: #fff;
+  --primary-to-messsage-text-color: #000;
+  --primary-hover-color: #117369;
+  --primary-focus-color: 1px #2f8f84 solid;
+  --primary-exit-btn-color: #d33030;
+  --hover-exit-btn-color: #972121;
+  --primary-border: 1px #dfdfdf solid;
+  --additional-border: 1px #000 solid;
+  --primary-modal-inner-bg-color: #21978b;
+}

@@ -1,0 +1,23 @@
+.invite-link {
+  background: var(--primary-modal-inner-bg-color);
+  padding: 10px 10px;
+  border-radius: 20px;
+  color: var(--additional-text-color);
+
+  &__input {
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+  }
+
+  &__button {
+    font-size: 20px;
+    color: var(--additional-text-color);
+
+    &:hover {
+      color: var(--primary-text-color);
+    }
+  }
+}

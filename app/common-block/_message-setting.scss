@@ -1,0 +1,16 @@
+.message-setting {
+  list-style: none;
+  padding: 0;
+  color: var(--primary-text-color);
+  display: flex;
+  gap: 10px;
+  &__item {
+    cursor: pointer;
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+  }
+  &_to {
+    align-self: flex-end;
+  }
+}
