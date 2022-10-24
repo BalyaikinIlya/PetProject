@@ -22,10 +22,10 @@
 
   &_system {
     align-self: center;
-    &_join {
+    &-join {
       color: var(--primary-system-message-text-color);
     }
-    &_left {
+    &-left {
       color: var(--additional-system-message-text-color);
     }
   }
