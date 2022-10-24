@@ -20,11 +20,14 @@
   <body class="general-body">
     <main class="authorization">
       <form action="" class="authorization__form auth-form column">
+<!--        это блок logo, а не просто элемент, логотип делают ссылкой-->
         <img
           src="src/img/logo_transparent.png"
           alt=""
           class="auth-form__logo logo_auth-form"
         />
+
+<!--        это блок input, элементы в основном для позиционирования-->
         <input
           class="auth-form__input"
           placeholder="Введите ваше имя"
@@ -35,6 +38,8 @@
           placeholder="Введите номер комнаты"
           type="text"
         />
+
+<!--        это button[submit] а не ссылка, я понимаю что это скорее всего для демки, но всё ж-->
         <a href="chat-box.html" class="auth-form__button button">Войти</a>
       </form>
     </main>
