@@ -18,6 +18,7 @@
 @import "common-block/authorization";
 @import "common-block/auth-form";
 
+//21978b дублируется даже здесь несколько раз, можно вынести
 :root {
   --primary-bg-color: #fff;
   --additional-bg-color: #eeeeee;
@@ -33,7 +34,7 @@
   --primary-from-message-text-color: #fff;
   --primary-to-messsage-text-color: #000;
   --primary-hover-color: #117369;
-  --primary-focus-color: 1px #2f8f84 solid;
+  --primary-focus-color: 1px #2f8f84 solid; // тут скорее прям весь border вынесен в переменную, не надо так
   --primary-exit-btn-color: #d33030;
   --hover-exit-btn-color: #972121;
   --primary-border: 1px #dfdfdf solid;

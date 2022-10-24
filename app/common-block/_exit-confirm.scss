@@ -1,5 +1,6 @@
+//много копипасты с invite-link, явно надо выделить отдельный блок под общий код
 .exit-confirm {
-  background: --primary-modal-inner-bg-color;
+  background: var(--primary-modal-inner-bg-color);
   padding: 10px 10px;
   font-size: 24px;
   border-radius: 20px;
