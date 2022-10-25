@@ -1,0 +1,15 @@
+.user-setting {
+  //ну такое, лучше всё таки через показ скрытие блока в общем потоке, иначе это работает как попап, а для него нужен отдельный блок FIXED
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+
+  align-items: center;
+  cursor: pointer;
+  &__item {
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+  }
+}

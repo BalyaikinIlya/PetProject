@@ -1,4 +1,6 @@
 .messages-list {
+  display: flex;
+  flex-direction: column;
   align-self: center;
   padding: 0 40px;
   margin: 0;
@@ -6,6 +8,10 @@
   gap: 10px;
 
   //это что-то лишнее явно, не понимаю что хотел хакнуть (наверное фиксится с помощью js, когда мало сообщений и нет прокрутки они прижаты к верху, juxstify-content: flex-end блочит скролл, нашел такой способ)
+  &__message {
+    max-width: 60%;
+  }
+
   & > :first-child {
     margin-top: auto;
   }

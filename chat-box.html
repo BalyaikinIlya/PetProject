@@ -11,61 +11,63 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
     <title>Команта чата №1</title>
   </head>
   <body class="general-body">
     <main class="layout">
-      <section class="layout__users column users box-scroll">
+      <section class=" layout__users users box-scroll">
         <header class="users__header box-scroll__header header">
-          <!--          это блок логотипа и он должен быть в ссылке-->
-          <img
-            src="src/img/logo_transparent.png"
+          <!--          это блок логотипа и он должен быть в ссылке FIXED-->
+          <a class="users__logo logo" href="#">
+            <img
+            src="assets/img/logo_transparent.png"
             alt=""
-            class="users__logo logo_users"
-          />
+            class="logo__inner-users"
+          />    
+          </a>  
+          
         </header>
         <!--          не параграф, а заголовок, в ul может быть только li FIXED-->
 
         <h2 class="users-list__tittle">Список участников</h2>
-        <ul class="users__users-list users-list box-scroll__content column">
+        <ul class="users__users-list users-list box-scroll__content">
           <!--          type=button обязательно  FIXED-->
-          <button type="button" class="users-list__invite-button button">
+          <button type="button" class="users-list__invite-button button button_link">
             Пригласить пользователей
           </button>
           <li class="user users-list__item">
-            <!--            порядок классов - сначала блок, затем элементы, затем модификаторы-->
+            <!--            порядок классов - сначала блок, затем элементы, затем модификаторы FIXED-->
             <img
-              src="src/img/avatar1.jpg"
+              src="assets/img/avatar1.jpg"
               alt=""
               class="avatar user__avatar avatar_users-list"
             />
             <span class="user__name">Баляйкин Илья </span>
 
-            <!--           TODO возможно лучше по UX сразу дать видеть эти иконки или не скрывать имя и аватарку-->
+            
+
+            <!--            для иконок лучше использовать font-awesome, не используй img, это устаревший подход FIXED-->
+                      <i class="fa-solid fa-star user__owner-status"></i>
+
+                      <!--           TODO возможно лучше по UX сразу дать видеть эти иконки или не скрывать имя и аватарку FIXED -->
             <!-- При нажатии на имя будут скрываться имя и икона (если есть) -->
-            <!-- <ul class="user__popup user-setting column">
+            <!-- <ul class="user__menu user-setting ">
               <li class="user-setting__item">Исключить</li>
               <li class="user-setting__item">Переименовать</li>
             </ul> -->
-
-            <!--            для иконок лучше использовать font-awesome, не используй img, это устаревший подход-->
-            <img
-              src="src/icon/chat_owner_icon.png"
-              alt=""
-              class="user__owner-status"
-            />
           </li>
         </ul>
         <footer class="box-scroll__footer exit">
-          <a href="index.html" class="exit__button">Покинуть чат</a>
+          <a href="index.html" class="exit__button button button_exit">Покинуть чат</a>
         </footer>
       </section>
-      <section class="layout__chat chat box-scroll column">
+      <section class="layout__chat chat box-scroll">
         <header class="chat__header header box-scroll__header">
           <!--          это кнопка, не просто иконка, если она планирует делать что-то FIXED-->
           <button type="button" class="chat__menu-button button"><img
-            src="src\icon\menu-icon.png"
+            src="assets\icon\menu-icon.png"
             alt=""
             class=""
           /></button>
@@ -76,10 +78,10 @@
         </header>
 
         <!--        вообще не надо делать список сообщений через ul, это лишняя семантика в данном случае-->
-        <ul class="messages-list box-scroll__content column">
+        <ul class="messages-list box-scroll__content ">
           <!--          message-system-join - правильный код стайл, а не через нижнее подчеркивание, оно нужно для элементов FIXED -->
           <li
-            class="messages-list__message message message_system message_system-join column"
+            class="messages-list__message message message_system message_system-join "
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
@@ -89,7 +91,7 @@
             </div>
           </li>
           <li
-            class="messages-list__message message message_system message_system-join column"
+            class="messages-list__message message message_system message_system-join "
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
@@ -97,7 +99,7 @@
               </p>
             </div>
           </li>
-          <li class="messages-list__message message message_from column">
+          <li class="messages-list__message message message_from ">
             <div class="message__inner-content message__inner-content_from">
               <p class="message__text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -134,18 +136,18 @@
             </ul> -->
             <img
               class="message__avatar_from avatar avatar_chat"
-              src="src/img/avatar1.jpg"
+              src="assets/img/avatar1.jpg"
               alt="12"
             />
           </li>
-          <li class="messages-list__message message message_to column">
+          <li class="messages-list__message message message_to ">
             <div class="message__inner-content message__inner-content_to">
               <p class="message__text">Привет, у меня все хорошо</p>
               <span class="message__time">12:12</span>
             </div>
             <img
               class="message__avatar avatar avatar_chat"
-              src="src/img/avatar1.jpg"
+              src="assets/img/avatar1.jpg"
               alt="12"
             />
             <!-- <ul class="message__popup message-setting message-setting_to">
@@ -153,18 +155,18 @@
               <li class="message-setting__item">Удалить</li>
             </ul> -->
           </li>
-          <li class="messages-list__message message message_to column">
+          <li class="messages-list__message message message_to">
             <div class="message__inner-content message__inner-content_to">
               <img
                 class="message__image"
-                src="src/img/message_img.jpg"
+                src="assets/img/message_img.jpg"
                 alt="Название файла"
               />
               <span class="message__time">12:12</span>
             </div>
             <img
               class="message__avatar avatar avatar_chat"
-              src="src/img/avatar1.jpg"
+              src="assets/img/avatar1.jpg"
               alt="12"
             />
             <!-- <ul class="message__popup message-setting message-setting_to">
@@ -175,17 +177,17 @@
         </ul>
         <footer class="box-scroll__footer chat__footer">
           <form class="chat__form send-form" action="">
-            <input class="send-form__input_text" type="text" />
+            <input class="input send-form__input_text  input_form-text" type="text" />
             <input
               id="send-form__file"
-              class="send-form__input_file"
+              class="input send-form__input input_form-file"
               type="file"
             />
             <label class="button" for="send-form__file">
               <img
                 class="send-form__button"
                 width="24px"
-                src="src\icon\attach-icon.png"
+                src="assets\icon\attach-icon.png"
                 alt=""
               />
             </label>
@@ -195,22 +197,22 @@
               <img
                 width="24px"
                 class="send-form__button"
-                src="src/icon/send-message__button.png"
+                src="assets/icon/send-message__button.png"
                 alt=""
               />
             </button>
           </form>
         </footer>
       </section>
-      <!-- <div class="layout__modal column modal-wrapper">
+      <!-- <div class="layout__modal  modal-wrapper">
         <div class="exit-confirm">
           <span class="exit-confirm__tittle">Вы точно хотите выйти?</span>
-          <button class="button exit-confirm__button">Да</button>
-          <button class="button exit-confirm__button">Нет</button>
+          <button class="button exit-confirm__button button button_choice">Да</button>
+          <button class="button exit-confirm__button button button_choice">Нет</button>
         </div>
       </div> -->
 
-      <!-- <div class="layout__modal column modal-wrapper">
+      <!-- <div class="layout__modal  modal-wrapper">
         <div class="invite-link">
           <input
             readonly
@@ -219,7 +221,7 @@
             type="text"
           /> -->
           <!-- &lt;!&ndash; нужен type=button или submit если это форма&ndash;&gt; FIXED -->
-          <!-- <button type="button" class="button invite-link__button">
+          <!-- <button type="button" class="button invite-link__button button button_invite">
             Копировать
           </button> -->
         </div>

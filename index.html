@@ -14,30 +14,33 @@
     <link rel="stylesheet" href="style.css" />
     <title>MyApp</title>
   </head>
-  <body class="general-body">
+  <body class="general-body general-body_auth ">
     <main class="authorization">
-      <form action="" class="authorization__form auth-form column">
-<!--        это блок logo, а не просто элемент, логотип делают ссылкой-->
-        <img
-          src="src/img/logo_transparent.png"
+      <form action="" class="authorization__form auth-form ">
+<!--        это блок logo, а не просто элемент, логотип делают ссылкой FIXED-->
+        <a class="auth-form__logo logo" href="">
+          <img
+          src="assets/img/logo_transparent.png"
           alt=""
-          class="auth-form__logo logo_auth-form"
+          class="logo__inner-auth"
         />
+        </a>
+        
 
-<!--        это блок input, элементы в основном для позиционирования-->
+<!--        это блок input, элементы в основном для позиционирования FIXED--> 
         <input
-          class="auth-form__input"
+          class="auth-form__input input input_auth"
           placeholder="Введите ваше имя"
           type="text"
         />
         <input
-          class="auth-form__input"
+          class="auth-form__input input input_auth"
           placeholder="Введите номер комнаты"
           type="text"
         />
 
 <!--        это button[submit] а не ссылка, я понимаю что это скорее всего для демки, но всё ж  FIXED-->
-        <button type="submit" href="chat-box.html" class="auth-form__button button">Войти</и>
+        <button type="submit" href="chat-box.html" class="auth-form__button button button_auth">Войти</и>
       </form>
     </main>
   </body>

@@ -1,7 +1,7 @@
 .user {
   display: flex;
   align-items: center;
-  border-bottom: var(--primary-border);
+  border-bottom: 1px solid var(--primary-border);
   gap: 10px;
   padding: 5px 20px;
   position: relative;
@@ -11,5 +11,10 @@
       color: var(--primary-hover-color);
       cursor: pointer;
     }
+  }
+
+  &__owner-status {
+    color: #e4e40a;
+    font-size: 20px;
   }
 }

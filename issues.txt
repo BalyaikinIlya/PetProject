@@ -1,8 +1,8 @@
-/app лишняя вложенность, можно прям в корне
+/app лишняя вложенность, можно прям в корне FIXED
 
-/src -> лучше assets
+/src -> лучше assets FIXED
 
-/common-block -> лучше styles
+/common-block -> лучше styles FIXED
 
 iphonese.png -> плохо выглядит для мобильных устройств, нет отступов
 

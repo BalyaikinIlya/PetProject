@@ -12,13 +12,4 @@
     border: none;
     padding: 0 10px;
   }
-
-  &__button {
-    font-size: 20px;
-    color: var(--additional-text-color);
-
-    &:hover {
-      color: var(--primary-text-color);
-    }
-  }
 }

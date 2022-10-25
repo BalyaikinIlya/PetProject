@@ -1,0 +1,55 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--additional-text-color);
+  border-radius: 20px;
+
+  //но я вот смотрю у тебя кнопки в проекте и можно вынести больше, а остальные варианты через модификаторы накинуть FIXED
+
+  &_exit {
+    width: 100%;
+    margin-left: auto;
+    background: var(--primary-exit-btn-color);
+    font-size: 18px;
+    padding: 10px 60px;
+    &:hover {
+      background: var(--hover-exit-btn-color);
+    }
+  }
+
+  &_auth {
+    font-size: 24px;
+    background: var(--primary-log-in-button-color);
+    padding: 5px 40px;
+    border-radius: 10px;
+    &:hover {
+      background: var(--primary-hover-color);
+    }
+  }
+
+  &_choice {
+    font-size: 20px;
+
+    &:hover {
+      color: var(--primary-text-color);
+    }
+  }
+
+  &_invite {
+    font-size: 20px;
+
+    &:hover {
+      color: var(--primary-text-color);
+    }
+  }
+
+  &_link {
+    color: var(--additional-second-color);
+    font-size: 20px;
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+  }
+}
