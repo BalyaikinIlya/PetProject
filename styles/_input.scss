@@ -1,3 +1,5 @@
+@import "mixins";
+
 .input {
   outline: none;
   border: 1px solid var(--additional-border);
@@ -16,8 +18,23 @@
   }
 
   &_auth {
-    font-size: 24px;
-    border-radius: 10px;
-    padding: 5px 10px;
+    @include desktop {
+      font-size: 24px;
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
+    @include mobile {
+      font-size: 18px;
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
+  }
+
+  &_invite {
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
   }
 }

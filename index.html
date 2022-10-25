@@ -18,7 +18,7 @@
     <main class="authorization">
       <form action="" class="authorization__form auth-form ">
 <!--        это блок logo, а не просто элемент, логотип делают ссылкой FIXED-->
-        <a class="auth-form__logo logo" href="">
+        <a class="auth-form__logo logo_inner-auth" href="">
           <img
           src="assets/img/logo_transparent.png"
           alt=""
@@ -28,12 +28,12 @@
         
 
 <!--        это блок input, элементы в основном для позиционирования FIXED--> 
-        <input
+        <input required
           class="auth-form__input input input_auth"
           placeholder="Введите ваше имя"
           type="text"
         />
-        <input
+        <input required
           class="auth-form__input input input_auth"
           placeholder="Введите номер комнаты"
           type="text"

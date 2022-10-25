@@ -11,27 +11,24 @@
 @import "styles/message";
 @import "styles/send-form";
 @import "styles/button";
-@import "styles/exit-confirm";
-@import "styles/invite-link";
 @import "styles/user-setting";
 @import "styles/message-setting";
 @import "styles/auth-form";
+@import "styles/modal";
+@import "styles/modal-inner";
 
 @import "styles/input";
 
-//21978b дублируется даже здесь несколько раз, можно вынести
+//21978b дублируется даже здесь несколько раз, можно вынести FIXED
 
 :root {
+  --additional-secondary-color: #21978b;
   --primary-bg-color: #fff;
   --additional-bg-color: #eeeeee;
   --primary-modal-bg-color: #dfdfdf8f;
   --primary-text-color: #000;
   --additional-text-color: #fff;
-  --additional-second-color: #21978b;
-  --primary-system-message-text-color: #21978b;
   --additional-system-message-text-color: #d33030;
-  --primary-log-in-button-color: #21978b;
-  --primary-from-message-color: #21978b;
   --primary-to-messsage-color: #d8d8d8;
   --primary-from-message-text-color: #fff;
   --primary-to-messsage-text-color: #000;
@@ -41,5 +38,4 @@
   --hover-exit-btn-color: #972121;
   --primary-border: #dfdfdf;
   --additional-border: #000;
-  --primary-modal-inner-bg-color: #21978b;
 }

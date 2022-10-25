@@ -1,13 +1,21 @@
+@import "mixins";
+
 .message {
   display: flex;
   flex-direction: column;
-  list-style: none;
 
   //такая же ошибка как на блоке выше, ты не можешь у блока делать ширину, только у элементов блока, сам блок не влияет на свою внешнюю геометрию FIXED
 
   gap: 5px;
 
   &__text {
+    @include desktop {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
     margin: 0;
     &_system {
       text-align: center;
@@ -24,7 +32,7 @@
   &_system {
     align-self: center;
     &-join {
-      color: var(--primary-system-message-text-color);
+      color: var(--additional-secondary-color);
     }
     &-left {
       color: var(--additional-system-message-text-color);
@@ -45,7 +53,7 @@
     flex-direction: column;
     padding: 10px 10px;
     &_from {
-      background: var(--primary-from-message-color);
+      background: var(--additional-secondary-color);
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       border-bottom-left-radius: 20px;
@@ -57,10 +65,15 @@
       border-bottom-right-radius: 20px;
     }
   }
-
   &__image {
-    width: 256px;
     border-radius: 10px;
     padding: 5px 5px;
+    @include desktop {
+      width: 256px;
+    }
+
+    @include mobile {
+      width: 200px;
+    }
   }
 }

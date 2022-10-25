@@ -1,3 +1,5 @@
+@import "mixins";
+
 .button {
   background: none;
   border: none;
@@ -20,18 +22,23 @@
   }
 
   &_auth {
-    font-size: 24px;
     background: var(--primary-log-in-button-color);
     padding: 5px 40px;
     border-radius: 10px;
     &:hover {
       background: var(--primary-hover-color);
     }
+
+    @include desktop {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &_choice {
-    font-size: 20px;
-
     &:hover {
       color: var(--primary-text-color);
     }
@@ -46,7 +53,7 @@
   }
 
   &_link {
-    color: var(--additional-second-color);
+    color: var(--additional-secondary-color);
     font-size: 20px;
     &:hover {
       color: var(--primary-hover-color);

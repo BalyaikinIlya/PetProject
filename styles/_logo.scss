@@ -1,9 +1,17 @@
+@import "mixins";
+
 .logo {
   //для модификаторов всё же распространеннее чуть отход от методологии и писать через -- FIXED
   &__inner-users {
     width: 100px;
   }
+
   &__inner-auth {
-    width: 256px;
+    @include desktop {
+      width: 256px;
+    }
+    @include mobile {
+      width: 180px;
+    }
   }
 }

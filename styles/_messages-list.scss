@@ -1,8 +1,9 @@
+@import "mixins";
 .messages-list {
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 0 40px;
+
   margin: 0;
   // это неверно, блок не может быть ограничен в ширину, только какой-то элемент FIXED
   gap: 10px;
@@ -14,5 +15,13 @@
 
   & > :first-child {
     margin-top: auto;
+  }
+
+  @include desktop {
+    padding: 0 40px;
+  }
+
+  @include mobile {
+    padding: 0 5px;
   }
 }
