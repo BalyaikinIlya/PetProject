@@ -16,31 +16,26 @@
   </head>
   <body class="general-body general-body_auth ">
     <main class="authorization">
-      <form action="" class="authorization__form auth-form ">
-<!--        это блок logo, а не просто элемент, логотип делают ссылкой FIXED-->
-        <a class="auth-form__logo logo_inner-auth" href="">
+      <form action="" class="auth-form authorization__form">
+        <a class="logo logo_inner-auth auth-form__logo " href="">
           <img
           src="assets/img/logo_transparent.png"
           alt=""
           class="logo__inner-auth"
         />
         </a>
-        
-
-<!--        это блок input, элементы в основном для позиционирования FIXED--> 
         <input required
-          class="auth-form__input input input_auth"
+          class="input input_auth auth-form__input "
           placeholder="Введите ваше имя"
           type="text"
         />
         <input required
-          class="auth-form__input input input_auth"
+          class="input input_auth auth-form__input "
           placeholder="Введите номер комнаты"
           type="text"
         />
 
-<!--        это button[submit] а не ссылка, я понимаю что это скорее всего для демки, но всё ж  FIXED-->
-        <button type="submit" href="chat-box.html" class="auth-form__button button button_auth">Войти</и>
+        <button type="submit" class="button button_auth auth-form__button ">Войти</и>
       </form>
     </main>
   </body>

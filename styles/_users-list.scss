@@ -5,10 +5,14 @@
   gap: 10px;
   margin: 0;
   padding: 0;
-  &__tittle {
+  list-style: none;
+  &__item_tittle {
     font-size: 24px;
     font-weight: 600;
     margin: 0;
+    align-self: center;
+  }
+  &__item_invite {
     align-self: center;
   }
 }

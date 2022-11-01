@@ -29,10 +29,9 @@
   </head>
   <body class="general-body">
     <main class="layout">
-      <section class="layout__users users box-scroll">
-        <header class="users__header box-scroll__header header">
-          <!--          это блок логотипа и он должен быть в ссылке FIXED-->
-          <a class="users__logo logo_inner-users" href="#">
+      <section class="users box-scroll layout__users">
+        <header class="header users__header box-scroll__header">
+          <a class="logo logo_inner-users users__logo" href="#">
             <img
               src="assets/img/logo_transparent.png"
               alt=""
@@ -40,19 +39,21 @@
             />
           </a>
         </header>
-        <!--          не параграф, а заголовок, в ul может быть только li FIXED-->
 
-        <h2 class="users-list__tittle">Список участников</h2>
-        <ul class="users__users-list users-list box-scroll__content">
-          <!--          type=button обязательно  FIXED-->
-          <button
-            type="button"
-            class="users-list__invite-button button button_link"
-          >
-            Пригласить пользователей
-          </button>
+        <ul class="users-list users__users-list box-scroll__content">
+          <li class="users-list__item users-list__item_tittle">
+            Список участников
+          </li>
+          <li class="users-list__item users-list__item_invite">
+            <button
+              type="button"
+              class="button button_link users-list__invite-button"
+            >
+              Пригласить пользователей
+            </button>
+          </li>
+
           <li class="user users-list__item">
-            <!--            порядок классов - сначала блок, затем элементы, затем модификаторы FIXED-->
             <img
               src="assets/img/avatar1.jpg"
               alt=""
@@ -60,11 +61,8 @@
             />
             <span class="user__name">Баляйкин Илья </span>
 
-            <!--            для иконок лучше использовать font-awesome, не используй img, это устаревший подход FIXED-->
             <i class="fa-solid fa-star user__owner-status"></i>
 
-            <!--           TODO возможно лучше по UX сразу дать видеть эти иконки или не скрывать имя и аватарку FIXED -->
-            <!-- При нажатии на имя будут скрываться имя и икона (если есть) -->
             <!-- <ul class="user__menu user-setting ">
               <li class="user-setting__item">Исключить</li>
               <li class="user-setting__item">Переименовать</li>
@@ -78,45 +76,39 @@
             />
             <span class="user__name">Алексей Узлов </span>
 
-            <!-- При нажатии на имя будут скрываться имя и икона (если есть) -->
-            <ul class="user__menu user-setting">
+            <ul class="user-setting user__menu">
               <li class="user-setting__item">Исключить</li>
               <li class="user-setting__item">Переименовать</li>
             </ul>
           </li>
         </ul>
-        <footer class="box-scroll__footer exit">
-          <a href="index.html" class="exit__button button button_exit"
+        <footer class="exit box-scroll__footer">
+          <a href="index.html" class="button button_exit exit__button"
             >Покинуть чат</a
           >
         </footer>
       </section>
-      <section class="layout__chat chat box-scroll">
-        <header class="chat__header header box-scroll__header">
-          <!--          это кнопка, не просто иконка, если она планирует делать что-то FIXED-->
-          <button type="button" class="chat__menu-button button">
+      <section class="chat box-scroll layout__chat">
+        <header class="header box-scroll__header chat__header">
+          <button type="button" class="button chat__menu-button">
             <img src="assets\icon\menu-icon.png" alt="" class="" />
           </button>
 
-          <!--          уже назвал title, стало быть не span а h1-h6 один из них FIXED-->
           <h2 class="chat__tittle">Чат комнаты №1</h2>
         </header>
 
-        <!--        вообще не надо делать список сообщений через ul, это лишняя семантика в данном случае FIXED -->
         <div class="messages-list box-scroll__content">
-          <!--          message-system-join - правильный код стайл, а не через нижнее подчеркивание, оно нужно для элементов FIXED -->
           <div
-            class="messages-list__message message message_system message_system-join"
+            class="message messages-list__message message_system message_system-join"
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
-                <!--                отчего же Пользователь 1, если есть имена FIXED-->
                 Пользователь Баляйкин Илья присоединился
               </p>
             </div>
           </div>
           <div
-            class="messages-list__message message message_system message_system-join"
+            class="message messages-list__message message_system message_system-join"
           >
             <div class="message__inner-content">
               <p class="message__text message__text_system">
@@ -124,7 +116,7 @@
               </p>
             </div>
           </div>
-          <div class="messages-list__message message message_from">
+          <div class="message messages-list__message message_from">
             <div class="message__inner-content message__inner-content_from">
               <p class="message__text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -160,12 +152,12 @@
               <li class="message-setting__item">Удалить</li>
             </ul> -->
             <img
-              class="message__avatar_from avatar avatar_chat"
+              class="avatar message__avatar_from avatar_chat"
               src="assets/img/avatar1.jpg"
               alt="12"
             />
           </div>
-          <div class="messages-list__message message message_to">
+          <div class="message messages-list__message message_to">
             <div class="message__inner-content message__inner-content_to">
               <p class="message__text">Привет, у меня все хорошо</p>
               <span class="message__time">12:12</span>
@@ -180,7 +172,7 @@
               <li class="message-setting__item">Удалить</li>
             </ul> -->
           </div>
-          <div class="messages-list__message message message_to">
+          <div class="message messages-list__message message_to">
             <div class="message__inner-content message__inner-content_to">
               <img
                 class="message__image"
@@ -201,7 +193,7 @@
           </div>
         </div>
         <footer class="box-scroll__footer chat__footer">
-          <form class="chat__form send-form" action="">
+          <form class="send-form chat__form" action="">
             <input
               class="input send-form__input_text input_form-text"
               type="text"
@@ -220,7 +212,6 @@
               />
             </label>
 
-            <!--            в этот раз как раз submit, т.к. отправка формы происходит с сообщением FIXED-->
             <button type="submit" class="button">
               <img
                 width="24px"
@@ -233,25 +224,24 @@
         </footer>
       </section>
       <!-- <div class="modal  modal-wrapper">
-        <div class="modal-inner modal-inner__exit-confirm exit-confirm">
+        <div class="modal-inner exit-confirm modal-inner__exit-confirm ">
           <span class="exit-confirm__tittle">Вы точно хотите выйти?</span>
-          <button class="button exit-confirm__button button button_choice">Да</button>
-          <button class="button exit-confirm__button button button_choice">Нет</button>
+          <button class="button exit-confirm__button  button_choice">Да</button>
+          <button class="button exit-confirm__button  button_choice">Нет</button>
         </div>
       </div> -->
 
       <!-- <div class="modal modal-wrapper">
-        <div class="modal-inner modal-inner__invite-link invite-link">
+        <div class="modal-inner invite-link modal-inner__invite-link ">
           <input
             readonly
             class="input input_invite invite-link__input"
             value="some/copy/link"
             type="text"
           /> -->
-      <!-- &lt;!&ndash; нужен type=button или submit если это форма&ndash;&gt; FIXED -->
       <!-- <button
             type="button"
-            class="button invite-link__button button button_invite"
+            class="button invite-link__button  button_invite"
           >
             Копировать
           </button>
