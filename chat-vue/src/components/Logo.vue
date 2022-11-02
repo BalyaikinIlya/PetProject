@@ -7,7 +7,24 @@
     />
   </a>
 </template>
-<script></script>
+<script>
+export default {
+  props: {
+    aside: {
+      type: String,
+      default() {
+        return "";
+      },
+    },
+    auth: {
+      type: String,
+      default() {
+        return "";
+      },
+    },
+  },
+};
+</script>
 <style lang="scss">
 .logo {
   &__inner {
