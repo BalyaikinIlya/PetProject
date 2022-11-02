@@ -1,0 +1,18 @@
+:root {
+  --additional-secondary-color: #21978b;
+  --primary-bg-color: #fff;
+  --additional-bg-color: #eeeeee;
+  --primary-modal-bg-color: #dfdfdf8f;
+  --primary-text-color: #000;
+  --additional-text-color: #fff;
+  --additional-system-message-text-color: #d33030;
+  --primary-to-messsage-color: #d8d8d8;
+  --primary-from-message-text-color: #fff;
+  --primary-to-messsage-text-color: #000;
+  --primary-hover-color: #117369;
+  --primary-focus-color: #2f8f84; // тут скорее прям весь border вынесен в переменную, не надо так FIXED
+  --primary-exit-btn-color: #d33030;
+  --hover-exit-btn-color: #972121;
+  --primary-border: #dfdfdf;
+  --additional-border: #000;
+}
