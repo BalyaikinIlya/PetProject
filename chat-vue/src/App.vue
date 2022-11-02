@@ -1,12 +1,12 @@
 <template>
   <main class="layout">
-    <AsideMenu class="layout__aside-menu"></AsideMenu>
-    <ChatBox class="layout__chat-box"></ChatBox>
+    <AsideMenu class="box-scroll layout__aside-menu"></AsideMenu>
+    <ChatBox class="box-scroll layout__chat-box"></ChatBox>
   </main>
 </template>
 <script>
-import AsideMenu from "@/components/AsideMenu.vue";
-import ChatBox from "@/components/ChatBox.vue";
+import AsideMenu from "@/components/AsideMenu";
+import ChatBox from "@/components/ChatBox";
 
 export default {
   components: {

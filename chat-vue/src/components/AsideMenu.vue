@@ -1,11 +1,14 @@
 <template>
   <section>
-    <Header></Header>
+    <AsideMenuHeader></AsideMenuHeader>
   </section>
 </template>
 <script>
+import AsideMenuHeader from "./AsideMenuHeader";
 export default {
-  components: {},
+  components: {
+    AsideMenuHeader,
+  },
 };
 </script>
 <style lang="scss"></style>
