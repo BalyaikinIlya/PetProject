@@ -1,6 +1,6 @@
 <template>
   <Header class="aside-menu-header">
-    <Logo class="aside-menu-header__logo"></Logo>
+    <Logo modifire="logo__inner--aside" class="aside-menu-header__logo"></Logo>
   </Header>
 </template>
 <script>
@@ -11,7 +11,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.aside-menu-header {
-}
-</style>
+<style lang="scss"></style>

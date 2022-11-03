@@ -20,6 +20,7 @@ export default {
 .layout {
   display: grid;
   height: 100vh;
+  font-family: "Inter", sans-serif;
 
   @include mobile {
     &__aside-menu {

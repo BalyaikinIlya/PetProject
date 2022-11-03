@@ -2,6 +2,7 @@
   <a class="logo" href="#">
     <img
       class="logo__inner"
+      v-bind:class="modifire"
       src="@/assets/img/logo_transparent.png"
       alt="Логотип приложения"
     />
@@ -10,13 +11,7 @@
 <script>
 export default {
   props: {
-    aside: {
-      type: String,
-      default() {
-        return "";
-      },
-    },
-    auth: {
+    modifire: {
       type: String,
       default() {
         return "";
@@ -28,6 +23,8 @@ export default {
 <style lang="scss">
 .logo {
   &__inner {
+    width: 100%;
+    height: 100%;
     &--aside {
       width: 100px;
     }
