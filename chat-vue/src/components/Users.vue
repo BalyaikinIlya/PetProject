@@ -4,7 +4,7 @@
   <UserList></UserList>
 </template>
 <script>
-import Button from "./Button";
+import Button from "./UI/Button";
 import UserList from "./UserList";
 export default {
   components: {

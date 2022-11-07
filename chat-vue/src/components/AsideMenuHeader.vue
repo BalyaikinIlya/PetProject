@@ -4,7 +4,7 @@
   </Header>
 </template>
 <script>
-import Logo from "@/components/Logo";
+import Logo from "@/components/UI/Logo";
 export default {
   components: {
     Logo,

@@ -1,16 +1,19 @@
 <template>
   <section class="aside-menu box-scroll">
     <AsideMenuHeader></AsideMenuHeader>
-    <Users class="aside-menu__users box-scroll__content"></Users>
+    <Users class="aside-menu__users"></Users>
+    <AsideMenuFooter></AsideMenuFooter>
   </section>
 </template>
 <script>
 import AsideMenuHeader from "./AsideMenuHeader";
 import Users from "./Users";
+import AsideMenuFooter from "./AsideMenuFooter.vue";
 export default {
   components: {
     AsideMenuHeader,
     Users,
+    AsideMenuFooter,
   },
 };
 </script>
@@ -18,5 +21,6 @@ export default {
 .aside-menu {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 </style>

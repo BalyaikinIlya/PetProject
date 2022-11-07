@@ -1,6 +1,6 @@
 <template>
   <main class="layout">
-    <AsideMenu class="box-scroll layout__aside-menu"></AsideMenu>
+    <AsideMenu class="layout__aside-menu"></AsideMenu>
     <ChatBox class="box-scroll layout__chat-box"></ChatBox>
   </main>
 </template>
@@ -20,7 +20,6 @@ export default {
 .layout {
   display: grid;
   height: 100vh;
-  font-family: "Inter", sans-serif;
 
   @include mobile {
     &__aside-menu {
