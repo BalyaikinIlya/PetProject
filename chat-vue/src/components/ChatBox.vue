@@ -1,5 +1,16 @@
-<template><section class="chat-box">ChatBox</section></template>
-<script></script>
+<template>
+  <section class="chat-box">
+    <ChatBoxHeader></ChatBoxHeader>
+  </section>
+</template>
+<script>
+import ChatBoxHeader from "@/components/ChatBoxHeader.vue";
+export default {
+  components: {
+    ChatBoxHeader,
+  },
+};
+</script>
 <style lang="scss">
 .chat-box {
   display: flex;
