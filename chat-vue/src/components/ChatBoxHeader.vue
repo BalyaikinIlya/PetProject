@@ -1,13 +1,34 @@
 <template>
-  <button type="button" class="button chat__menu-button">
-    <img
-      src="assets\icon\menu-icon.png"
-      alt="Скрыть/Показать список участников"
-      class=""
-    />
-  </button>
+  <header class="chatbox-header">
+    <Button>
+      <i class="fa-solid fa-bars chatbox-header__menu-button"></i>
+    </Button>
 
-  <h2 class="chat__tittle">Чат комнаты №1</h2>
+    <h2 class="chatbox-header__tittle">Чат комнаты №1</h2>
+  </header>
 </template>
-<script></script>
-<style lang="scss"></style>
+<script>
+import Button from "@/components/UI/Button";
+export default {
+  components: {
+    Button,
+  },
+};
+</script>
+<style lang="scss">
+.chatbox-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--primary-border);
+  &__menu-button {
+    font-size: 26px;
+  }
+  &__tittle {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+</style>

@@ -7,7 +7,6 @@
 <script>
 import AsideMenu from "@/components/AsideMenu";
 import ChatBox from "@/components/ChatBox";
-
 export default {
   components: {
     AsideMenu,

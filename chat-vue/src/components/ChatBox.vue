@@ -1,13 +1,19 @@
 <template>
-  <section class="chat-box">
+  <section class="chat-box box-scroll">
     <ChatBoxHeader></ChatBoxHeader>
+    <MessageList class="box-scroll__content"></MessageList>
+    <ChatBoxForm></ChatBoxForm>
   </section>
 </template>
 <script>
-import ChatBoxHeader from "@/components/ChatBoxHeader.vue";
+import MessageList from "@/components/MessageList";
+import ChatBoxHeader from "@/components/ChatBoxHeader";
+import ChatBoxForm from "@/components/ChatBoxForm";
 export default {
   components: {
     ChatBoxHeader,
+    MessageList,
+    ChatBoxForm,
   },
 };
 </script>
@@ -15,17 +21,5 @@ export default {
 .chat-box {
   display: flex;
   flex-direction: column;
-  &__header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--primary-border);
-  }
-  &__tittle {
-    font-size: 24px;
-    margin: 0;
-    font-weight: 400;
-  }
 }
 </style>
