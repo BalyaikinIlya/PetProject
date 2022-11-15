@@ -10,7 +10,6 @@
 <script>
 import Message from "@/components/Message";
 import { mapGetters, maspGetter } from "vuex";
-
 export default {
   // computed: {
   //   allMessages() {

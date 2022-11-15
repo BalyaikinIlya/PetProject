@@ -1,6 +1,10 @@
 export default {
   actions: {},
-  mutations: {},
+  mutations: {
+    createMessage(state, newMessage) {
+      state.messages.push(newMessage);
+    },
+  },
   state: {
     messages: [
       {

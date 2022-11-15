@@ -1,18 +1,41 @@
 <template>
-    <form class="chatbox-footer__form send-form" action="">
-      <TextInput class="send-form__text-input"></TextInput>
-      <AttachInput></AttachInput>
-      <Button type="submit">
-        <i class="fa-solid fa-paper-plane send-form__button-icon"></i>
-      </Button>
-    </form>
-  
+  <form @submit.prevent="sendMessage" class="chatbox-footer__form send-form">
+    <TextInput
+      v-model="text"
+      placeholder="Начните набирать сообщение"
+      class="send-form__text-input"
+    ></TextInput>
+    <AttachInput></AttachInput>
+    <Button type="submit">
+      <i class="fa-solid fa-paper-plane send-form__button-icon"></i>
+    </Button>
+  </form>
 </template>
 <script>
 import Button from "@/components/UI/Button";
 import AttachInput from "@/components/UI/AttachInput";
 import TextInput from "@/components/UI/TextInput";
+import { mapMutations } from "vuex";
+
 export default {
+  data() {
+    return {
+      text: "",
+    };
+  },
+  methods: {
+    ...mapMutations(["createMessage"]),
+    sendMessage() {
+      this.createMessage({
+        id: 123,
+        text: this.text,
+        time: "23:23",
+        owner: true,
+        system: false,
+      });
+      this.text = "";
+    },
+  },
   components: {
     Button,
     AttachInput,
@@ -22,7 +45,6 @@ export default {
 </script>
 <style lang="scss">
 @import "@/assets/mixins.scss";
-
 
 .send-form {
   padding: 10px 20px;
