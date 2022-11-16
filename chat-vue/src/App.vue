@@ -45,7 +45,7 @@ export default {
 
     &__chat-box {
       grid-area: layout__chat-box;
-      flex: 1 1 auto;
+      flex: 1;
     }
   }
 }

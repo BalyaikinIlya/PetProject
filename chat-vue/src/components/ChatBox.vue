@@ -9,6 +9,7 @@
 import MessageList from "@/components/MessageList";
 import ChatBoxHeader from "@/components/ChatBoxHeader";
 import ChatBoxForm from "@/components/ChatBoxForm";
+
 export default {
   components: {
     ChatBoxHeader,

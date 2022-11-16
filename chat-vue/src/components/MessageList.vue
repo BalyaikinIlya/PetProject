@@ -1,6 +1,7 @@
 <template>
-  <div class="message-list">
+  <div ref="myDiv" id="messageList" class="message-list">
     <Message
+      ref="scrollDown"
       v-for="messages in GetAllMessages"
       :messages="messages"
       class="message-list__message"
@@ -10,13 +11,21 @@
 <script>
 import Message from "@/components/Message";
 import { mapGetters, mapGetter } from "vuex";
+import { nextTick, ref } from "vue";
+
 export default {
   // computed: {
   //   allMessages() {
   //     return this.$store.getters.GetAllMessages;
   //   },
   // },
-
+  methods: {
+    async scrollDown() {
+      await nextTick();
+      let block = document.getElementById("messageList");
+      block.scrollTop = block.scrollHeight;
+    },
+  },
   computed: mapGetters(["GetAllMessages"]),
 
   components: {
