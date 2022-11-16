@@ -9,7 +9,7 @@
 </template>
 <script>
 import Message from "@/components/Message";
-import { mapGetters, maspGetter } from "vuex";
+import { mapGetters, mapGetter } from "vuex";
 export default {
   // computed: {
   //   allMessages() {
@@ -81,5 +81,9 @@ export default {
   margin: 0;
   padding: 10px 40px;
   gap: 10px;
+
+  // & > :first-child {
+  //   margin-top: auto;
+  // }
 }
 </style>

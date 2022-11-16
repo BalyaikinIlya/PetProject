@@ -1,6 +1,6 @@
 <template>
   <header class="chatbox-header">
-    <Button>
+    <Button @click="displayAside">
       <i class="fa-solid fa-bars chatbox-header__menu-button"></i>
     </Button>
 
@@ -9,9 +9,17 @@
 </template>
 <script>
 import Button from "@/components/UI/Button";
+import { mapMutations } from "vuex";
+
 export default {
   components: {
     Button,
+  },
+  methods: {
+    ...mapMutations(["displayAsideMenu"]),
+    displayAside() {
+      this.displayAsideMenu();
+    },
   },
 };
 </script>
