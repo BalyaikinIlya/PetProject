@@ -7,6 +7,7 @@
 <script>
 import AsideMenu from "@/components/AsideMenu";
 import ChatBox from "@/components/ChatBox";
+// Unused import specifier mapGetter. тут как раз пригодился бы Eslint
 import { mapGetters, mapGetter } from "vuex";
 export default {
   computed: mapGetters(["getVisibility"]),

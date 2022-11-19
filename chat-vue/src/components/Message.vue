@@ -1,4 +1,5 @@
 <template>
+<!-- Нет необходимости явно сравнивать c true/false, достаточно просто  v-if="messages.system" или  v-if="!messages.system"  -->
   <div v-if="messages.system === true" class="message message_system">
     <p class="message__text message__text_system-join">
       {{ messages.text }}
@@ -42,6 +43,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  // А если с обоих сторон будет длинное сообщение, то проблем не будет?
+  // То есть 60% с одной и 60% с другой
   max-width: 60%;
   align-self: flex-start;
   &_owner {
