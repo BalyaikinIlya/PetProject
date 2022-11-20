@@ -1,8 +1,8 @@
 <template>
   <section class="chat-box box-scroll">
-    <ChatBoxHeader></ChatBoxHeader>
-    <MessageList ref="block" class="box-scroll__content"></MessageList>
-    <ChatBoxForm></ChatBoxForm>
+    <ChatBoxHeader class="box-scroll__header"></ChatBoxHeader>
+    <MessageList class="box-scroll__content"></MessageList>
+    <ChatBoxForm class="box-scroll__footer"></ChatBoxForm>
   </section>
 </template>
 <script>
@@ -20,8 +20,8 @@ export default {
   computed: mapState(["messages"]),
   watch: {
     messages() {
-      this.$refs.block.scrollTop = this.$refs.block.scrollHeight;
-      alert("Я чмо");
+      // this.$refs.block.scrollTop = this.$refs.block.scrollHeight;
+      // alert("Я чмо");
     },
   },
 };

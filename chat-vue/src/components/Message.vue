@@ -1,25 +1,25 @@
 <template>
 <!-- Нет необходимости явно сравнивать c true/false, достаточно просто  v-if="messages.system" или  v-if="!messages.system"  -->
-  <div v-if="messages.system === true" class="message message_system">
+  <div v-if="message.system === true" class="message message_system">
     <p class="message__text message__text_system-join">
-      {{ messages.text }}
+      {{ message.text }}
     </p>
   </div>
-  <div v-else-if="messages.owner === true" class="message message_owner">
+  <div v-else-if="message.owner === true" class="message message_owner">
     <div class="message__content message__content_owner">
       <p class="message__text">
-        {{ messages.text }}
+        {{ message.text }}
       </p>
-      <span class="message__time">{{ messages.time }}</span>
+      <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar class="message__avatar message__avatar_owner"></Avatar>
   </div>
   <div v-else class="message">
     <div class="message__content message__content">
       <p class="message__text">
-        {{ messages.text }}
+        {{ message.text }}
       </p>
-      <span class="message__time">{{ messages.time }}</span>
+      <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar class="message__avatar message__avatar"></Avatar>
   </div>
@@ -28,7 +28,7 @@
 import Avatar from "@/components/UI/Avatar.vue";
 export default {
   props: {
-    messages: {
+    message: {
       type: Object,
       required: true,
     },

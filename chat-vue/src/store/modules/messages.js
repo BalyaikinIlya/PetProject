@@ -1,8 +1,10 @@
+import { uuidv4 } from '@/guid';
+
 export default {
   actions: {},
   mutations: {
     createMessage(state, newMessage) {
-      state.messages.push(newMessage);
+      state.messages = [...state.messages, newMessage];
     },
   },
   state: {
@@ -13,7 +15,7 @@ export default {
          Зачастую используются проверка на отсутствие сообщения, по типу if(!message?.id),
          Если сообщение имеет id = 0, то проверка будет некорректной.
         */
-        id: 0,
+        id: uuidv4(),
         text: "Пользователь 1 присоединился",
         // Лучше дату в соответствующем формате (new Date('......')), или какую-нибудь библиотеку, по желанию
         // Как минимум, со временем в виде строки ты ничего не сможешь сделать. К примеру, ты захочешь чтобы для сообщений которые написаны меньше минуты назад
@@ -25,7 +27,7 @@ export default {
         system: true,
       },
       {
-        id: 44,
+        id: uuidv4(),
         text: "Пользователь 2 присоединился",
         time: "12:30",
         owner: false,
@@ -35,6 +37,35 @@ export default {
         //  v-if="messages.type === MessageType.Text"
         //  v-if="messages.type === MessageType.System"
         system: true,
+      },
+
+      {
+        id: uuidv4(),
+        text: "Привет как дела?",
+        time: "12:32",
+        owner: true,
+        system: false,
+      },
+      {
+        id: uuidv4(),
+        text: "Привет, отлично. У тебя как?",
+        time: "12:33",
+        owner: false,
+        system: false,
+      },
+      {
+        id: uuidv4(),
+        text: "Я вчера ходил в кино, мне очень понравилось",
+        time: "12:34",
+        owner: true,
+        system: false,
+      },
+      {
+        id: uuidv4(),
+        text: "Круто, что за кино?",
+        time: "12:34",
+        owner: false,
+        system: false,
       },
     ],
   },
