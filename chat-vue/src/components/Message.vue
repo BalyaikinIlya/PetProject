@@ -1,5 +1,5 @@
 <template>
-<!-- Нет необходимости явно сравнивать c true/false, достаточно просто  v-if="messages.system" или  v-if="!messages.system"  -->
+  <!-- Нет необходимости явно сравнивать c true/false, достаточно просто  v-if="messages.system" или  v-if="!messages.system"  -->
   <div v-if="message.system === true" class="message message_system">
     <p class="message__text message__text_system-join">
       {{ message.text }}

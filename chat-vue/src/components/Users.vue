@@ -16,15 +16,12 @@ export default {
 };
 </script>
 <style lang="scss">
-// Во vue класс не биндится к template поскольку он не рендерится
-// https://stackoverflow.com/questions/66705983/how-add-class-to-template-tag-in-vue
-// То есть сейчас твои классы просто не применяются
 .users {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0;
-  padding: 0;
+  flex: 1;
+
   list-style: none;
   &__tittle {
     font-size: 24px;

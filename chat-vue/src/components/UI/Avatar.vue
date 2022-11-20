@@ -2,10 +2,10 @@
 <template>
   <img
     src="@/assets/img/avatar1.jpg"
-    alt="Аватар пользователя"
+    alt="User Avatar"
     class="avatar"
-    width="24"
-    height="24"
+    width="36"
+    height="36"
   />
 </template>
 <style lang="scss">
