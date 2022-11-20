@@ -11,6 +11,7 @@
 <script>
 export default {
   props: {
+    // modifire? Опечатка?
     modifire: {
       type: String,
       default() {

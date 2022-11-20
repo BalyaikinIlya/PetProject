@@ -16,6 +16,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  // По БЭМу не стоит задавать блоку внешнюю геоматрию, внешние отступы и тп
+  // https://ru.bem.info/methodology/quick-start/#%D0%B1%D0%BB%D0%BE%D0%BA
   margin: 0;
   padding: 0;
 }

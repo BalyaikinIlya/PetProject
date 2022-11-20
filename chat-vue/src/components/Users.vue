@@ -14,6 +14,9 @@ export default {
 };
 </script>
 <style lang="scss">
+// Во vue класс не биндится к template поскольку он не рендерится
+// https://stackoverflow.com/questions/66705983/how-add-class-to-template-tag-in-vue
+// То есть сейчас твои классы просто не применяются
 .users {
   display: flex;
   flex-direction: column;

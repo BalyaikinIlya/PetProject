@@ -45,6 +45,8 @@ export default {
   components: {
     Message,
   },
+  // Старайся не оставлять закоменченный код, если не планируешь его использовать в максимально ближайшие сроки,
+  // Существует риск, что этот код будет лежать мёртвым грузом долго
   // data() {
   //   return {
   //     messages: [
@@ -101,7 +103,7 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 0;
+  margin: 0;// Тут и так 0 значение, нет смысла прописывать это
   padding: 10px 40px;
   gap: 10px;
 

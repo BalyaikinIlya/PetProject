@@ -3,7 +3,8 @@
     <Button @click="displayAside">
       <i class="fa-solid fa-bars chatbox-header__menu-button"></i>
     </Button>
-
+<!--Номер комнаты должен задаваться динамически по идее, то есть у тебя есть контент Чат комнаты №, а уже  номер комнаты-->
+<!--задаётся динамически-->
     <h2 class="chatbox-header__tittle">Чат комнаты №1</h2>
   </header>
 </template>
@@ -18,6 +19,7 @@ export default {
   methods: {
     ...mapMutations(["displayAsideMenu"]),
     displayAside() {
+      // displayAsideMenu принимает аргументы, а ты их не передаешь
       this.displayAsideMenu();
     },
   },
