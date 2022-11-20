@@ -1,7 +1,9 @@
-<template class="users">
-  <h2 class="users__tittle">Список пользователей</h2>
-  <Button class="users__button">Пригласить пользователей</Button>
-  <UserList></UserList>
+<template>
+  <div class="users">
+    <h2 class="users__tittle">Список пользователей</h2>
+    <Button class="users__button">Пригласить пользователей</Button>
+    <UserList></UserList>
+  </div>
 </template>
 <script>
 import Button from "./UI/Button";

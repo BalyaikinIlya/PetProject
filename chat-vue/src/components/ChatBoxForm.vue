@@ -16,6 +16,7 @@ import Button from "@/components/UI/Button";
 import AttachInput from "@/components/UI/AttachInput";
 import TextInput from "@/components/UI/TextInput";
 import {mapMutations} from "vuex";
+import { uuidv4 } from '@/guid';
 
 export default {
   data() {
@@ -27,7 +28,7 @@ export default {
     ...mapMutations(["createMessage"]),
     sendMessage() {
       this.createMessage({
-        id: 123,
+        id: uuidv4(),
         text: this.text,
         // Писал по этому поводу
         time: "23:23",

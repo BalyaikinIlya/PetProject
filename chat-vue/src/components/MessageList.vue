@@ -1,45 +1,37 @@
 <template>
-  <div ref="block" id="messageList" class="message-list">
+  <div ref="block" class="message-list">
     <Message
-      v-for="messages in GetAllMessages"
-      :messages="messages"
+      v-for="message in GetAllMessages"
+      :message="message"
       class="message-list__message"
     ></Message>
   </div>
 </template>
 <script>
 import Message from "@/components/Message";
-import store from "@/store";
-import { mapGetters } from "vuex";
-import { mapState } from "vuex";
-export default {
-  // computed: {
-  //   allMessages() {
-  //     return this.$store.getters.GetAllMessages;
-  //   },
-  // },
 
+export default {
+  mounted() {
+    this.scrollDown()
+  },
   methods: {
     scrollDown() {
-      let block = document.getElementById("messageList");
-      block.scrollTop = block.scrollHeight;
+      this.$nextTick(() => {
+        this.$refs.block.scrollTop = this.$refs.block.scrollHeight;
+      })
     },
   },
+
   computed: {
     GetAllMessages() {
       return this.$store.getters.GetAllMessages;
     },
-    messages() {
-      return this.$store.state.messages;
-    },
   },
+
   watch: {
-    messages() {
-      setTimeout(() => {
-        this.$refs.block.scrollTop = this.$refs.block.scrollHeight;
-        console.log("xue");
-      });
-    },
+    GetAllMessages() {
+      this.scrollDown();
+    }
   },
 
   components: {
