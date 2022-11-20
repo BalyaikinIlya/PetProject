@@ -28,7 +28,7 @@ import Avatar from "@/components/UI/Avatar.vue";
 export default {
   props: {
     messages: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },
