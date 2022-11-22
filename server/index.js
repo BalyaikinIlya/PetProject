@@ -1,21 +1,27 @@
-const express = require("express");
-const app = express();
-const http = require("http");
+import { createServer } from "http";
+import { Server } from "socket.io";
 
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server, {
-  cors: {
-    origin: "",
-    methods: ["GET", "POST"],
-    credentials: false,
-  },
+const httpServer = createServer();
+const io = new Server(httpServer, {
+    cors: {
+        origin: "http://localhost:8081"
+    }
 });
 
-io.on("connection", (socket) => {
-  console.log("user connected");
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+
+    socket.on('chat message', (msg) => {
+        console.log('message: ' + msg);
+        io.emit('chat message', msg);
+    });
 });
 
-server.listen(3000, () => {
-  console.log("listening on *:3000");
+io.listen(3000, () => {
+    console.log("listening on *:3000");
 });
+
+
