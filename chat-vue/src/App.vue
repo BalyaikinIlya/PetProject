@@ -1,15 +1,25 @@
 <template>
   <main class="layout">
-    <AsideMenu v-show="getVisibility" class="layout__aside-menu"></AsideMenu>
+    <AsideMenu
+      @click="join"
+      v-show="getVisibility"
+      class="layout__aside-menu"
+    ></AsideMenu>
     <ChatBox class="box-scroll layout__chat-box"></ChatBox>
   </main>
 </template>
 <script>
 import AsideMenu from "@/components/AsideMenu";
 import ChatBox from "@/components/ChatBox";
+import io from "socket.io-client";
 // Unused import specifier mapGetter. тут как раз пригодился бы Eslint
 import { mapGetters, mapGetter } from "vuex";
 export default {
+  methods: {
+    join() {
+      this.socketInstance = io("http://localhost:3000");
+    },
+  },
   computed: mapGetters(["getVisibility"]),
   components: {
     AsideMenu,
