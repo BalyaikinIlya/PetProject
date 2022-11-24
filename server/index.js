@@ -9,19 +9,17 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
-
-  socket.on("createMessage", (data) => {
-    socket.emit("newMessage", {
-      text: data.text + "Test1234 from server",
-    });
+  console.log(`${socket.id}  connected`);
+  let token = socket.handshake.auth.token;
+  socket.on("disconnect", () => {
+    console.log(`${socket.id}  disconnected`);
   });
 
-  socket.emit("newMessage", {
-    text: " SERVER",
+  socket.on("newMessage", (msg) => {
+    io.emit("broadcastMessage", `server: ${msg}`);
   });
 });
 
-io.listen(3000, () => {
+httpServer.listen(3000, () => {
   console.log("listening on *:3000");
 });

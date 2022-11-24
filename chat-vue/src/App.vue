@@ -2,30 +2,20 @@
   <main class="layout">
     <AsideMenu v-show="getVisibility" class="layout__aside-menu"></AsideMenu>
     <ChatBox class="box-scroll layout__chat-box"></ChatBox>
-    <button @click="message">send</button>
   </main>
 </template>
 <script>
 import AsideMenu from "@/components/AsideMenu";
 import ChatBox from "@/components/ChatBox";
 import { mapGetters } from "vuex";
-import { io } from "socket.io-client";
-const socket = io("localhost:3000");
+import SocketioService from "@/services/socketio.service";
+
 export default {
-  sockets: {
-    connect: function () {
-      console.log("socket connected");
-    },
+  created() {
+    SocketioService.setupSocketConnection();
   },
-  methods: {
-    message() {
-      this.$socket.emit("createMessage", {
-        text: "from CLIENT",
-      });
-      // socket.emit("createMessage", {
-      //   text: "from CLIENT",
-      // });
-    },
+  beforeUnmount() {
+    SocketioService.disconnect();
   },
 
   computed: mapGetters(["getVisibility"]),
