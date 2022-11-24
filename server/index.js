@@ -10,13 +10,15 @@ const io = new Server(httpServer, {
 
 io.on("connection", (socket) => {
   console.log("a user connected");
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
+
+  socket.on("createMessage", (data) => {
+    socket.emit("newMessage", {
+      text: data.text + "Test1234 from server",
+    });
   });
 
-  socket.on("chat message", (msg) => {
-    console.log("message: " + msg);
-    io.emit("chat message", msg);
+  socket.emit("newMessage", {
+    text: " SERVER",
   });
 });
 

@@ -1,47 +1,33 @@
 <template>
   <main class="layout">
-    <AsideMenu
-      @click="send"
-      v-show="getVisibility"
-      class="layout__aside-menu"
-    ></AsideMenu>
+    <AsideMenu v-show="getVisibility" class="layout__aside-menu"></AsideMenu>
     <ChatBox class="box-scroll layout__chat-box"></ChatBox>
+    <button @click="message">send</button>
   </main>
 </template>
 <script>
 import AsideMenu from "@/components/AsideMenu";
 import ChatBox from "@/components/ChatBox";
-// import { io } from "socket.io-client";
-
-// Unused import specifier mapGetter. тут как раз пригодился бы Eslint
 import { mapGetters } from "vuex";
-
-// const socket = io("http://localhost:3000");
-
+import { io } from "socket.io-client";
+const socket = io("localhost:3000");
 export default {
-  // sockets: {
-  //   connect: function () {
-  //     console.log("socket connected");
-  //   },
-  // },
-  //   // mounted() {
-  //   //   socket.on("connect", () => {
-  //   //     console.log("connected", socket.id); // x8WIv7-mJelg7on_ALbx
-  //   //   });
+  sockets: {
+    connect: function () {
+      console.log("socket connected");
+    },
+  },
+  methods: {
+    message() {
+      this.$socket.emit("createMessage", {
+        text: "from CLIENT",
+      });
+      // socket.emit("createMessage", {
+      //   text: "from CLIENT",
+      // });
+    },
+  },
 
-  //   //   socket.on("chat message", function (msg) {
-  //   //     console.info("incoming", msg);
-  //   //   });
-  //   },
-
-  // methods: {
-  //   send() {
-  //     const msg = `hello ${Math.random()}`;
-  //     socket.emit("chat message", msg);
-
-  //     console.info("sent", msg);
-  //   },
-  // },
   computed: mapGetters(["getVisibility"]),
   components: {
     AsideMenu,

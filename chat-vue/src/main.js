@@ -4,7 +4,6 @@ import "./assets/style.scss";
 import store from "@/store/index.js";
 import VueSocketIO from "vue-socket.io";
 import SocketIO from "socket.io-client";
-
 const app = createApp(App);
 app.use(
   store,
