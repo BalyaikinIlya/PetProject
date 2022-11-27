@@ -1,13 +1,14 @@
 <template>
   <div class="users">
     <h2 class="users__tittle">Список пользователей</h2>
-    <Button class="users__button">Пригласить пользователей</Button>
+    <Button class="users__button">Пригласить пользователей </Button>
     <UserList></UserList>
   </div>
 </template>
 <script>
-import Button from "./UI/Button";
+import Button from "@/components/UI/Button";
 import UserList from "./UserList";
+
 export default {
   components: {
     Button,

@@ -4,7 +4,7 @@
   </footer>
 </template>
 <script>
-import Button from "./UI/Button.vue";
+import Button from "@/components/UI/Button.vue";
 export default {
   components: {
     Button,

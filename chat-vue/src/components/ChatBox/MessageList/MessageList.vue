@@ -2,6 +2,7 @@
   <div ref="block" class="message-list">
     <Message
       v-for="message in GetAllMessages"
+      :key="message.id"
       :message="message"
       class="message-list__message"
     >
@@ -9,7 +10,7 @@
   </div>
 </template>
 <script>
-import Message from "@/components/Message";
+import Message from "./Message";
 
 export default {
   mounted() {

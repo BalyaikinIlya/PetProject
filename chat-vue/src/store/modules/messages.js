@@ -1,11 +1,7 @@
 import { uuidv4 } from "@/guid";
 
 export default {
-  actions: {
-    SOCKET_newMessage(ctx, data) {
-      console.log("hello", data);
-    },
-  },
+  actions: {},
   mutations: {
     createMessage(state, newMessage) {
       state.messages = [...state.messages, newMessage];

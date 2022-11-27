@@ -6,10 +6,9 @@
   </section>
 </template>
 <script>
-import MessageList from "@/components/MessageList";
-import ChatBoxHeader from "@/components/ChatBoxHeader";
-import ChatBoxForm from "@/components/ChatBoxForm";
-
+import MessageList from "@/components/ChatBox/MessageList/MessageList.vue";
+import ChatBoxHeader from "@/components/ChatBox/ChatBoxHeader";
+import ChatBoxForm from "@/components/ChatBox/ChatBoxForm";
 export default {
   components: {
     ChatBoxHeader,

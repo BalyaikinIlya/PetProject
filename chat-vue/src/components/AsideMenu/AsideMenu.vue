@@ -7,7 +7,7 @@
 </template>
 <script>
 import AsideMenuHeader from "./AsideMenuHeader";
-import Users from "./Users";
+import Users from "./UserList/Users";
 import AsideMenuFooter from "./AsideMenuFooter.vue";
 export default {
   components: {

@@ -2,7 +2,7 @@
   <a class="logo" href="#">
     <img
       class="logo__inner"
-      v-bind:class="modifire"
+      v-bind:class="modifier"
       src="@/assets/img/logo_transparent.png"
       alt="Логотип приложения"
     />
@@ -12,7 +12,7 @@
 export default {
   props: {
     // modifire? Опечатка?
-    modifire: {
+    modifier: {
       type: String,
       default() {
         return "";
@@ -28,6 +28,9 @@ export default {
     height: 100%;
     &--aside {
       width: 100px;
+    }
+    &--auth {
+      width: 200px;
     }
   }
 }

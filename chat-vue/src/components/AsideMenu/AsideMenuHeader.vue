@@ -1,6 +1,6 @@
 <template>
   <header class="aside-menu-header">
-    <Logo modifire="logo__inner--aside" class="aside-menu-header__logo"></Logo>
+    <Logo modifier="logo__inner--aside" class="aside-menu-header__logo"></Logo>
   </header>
 </template>
 <script>

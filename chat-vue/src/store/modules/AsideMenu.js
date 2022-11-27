@@ -1,14 +1,10 @@
 export default {
   actions: {},
   mutations: {
-    displayAsideMenu(state, visibility) {
+    displayAsideMenu(state) {
       // Можно немного упростить эту запись, причем моя IDE советует это решение
       // state.visibility = !state.visibility;
-      if (state.visibility) {
-        state.visibility = false;
-      } else {
-        state.visibility = true;
-      }
+      state.visibility = !state.visibility;
     },
   },
   state: {
