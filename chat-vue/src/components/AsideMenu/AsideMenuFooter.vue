@@ -1,11 +1,21 @@
 <template>
   <footer class="aside-menu-footer">
-    <Button class="aside-menu-footer__button">Покинуть чат</Button>
+    <Button @click="exit" class="aside-menu-footer__button"
+      >Покинуть чат</Button
+    >
   </footer>
 </template>
 <script>
 import Button from "@/components/UI/Button.vue";
+import { mapMutations } from "vuex";
 export default {
+  methods: {
+    ...mapMutations(["clearData"]),
+    exit() {
+      this.$router.push("/?message=leftChat");
+      this.clearData();
+    },
+  },
   components: {
     Button,
   },

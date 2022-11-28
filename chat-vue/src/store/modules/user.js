@@ -4,11 +4,13 @@ export default {
     setUser(state, user) {
       state.user = user;
     },
+    clearData(state) {
+      state.user = {};
+    },
   },
   state() {
-    return {
-      user: {},
-    };
+    user: {
+    }
   },
   getters: {
     getRoom() {

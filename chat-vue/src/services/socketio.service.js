@@ -1,5 +1,4 @@
 import { io } from "socket.io-client";
-
 class SocketioService {
   socket;
   constructor() {}
@@ -11,7 +10,22 @@ class SocketioService {
       //   },
     });
 
-    this.socket.emit("newMessage", "Hello there from Vue.");
+    this.socket.emit("newMessage", "Hello  from Vue.");
+  }
+  userJoined(user) {
+    this.socket.emit("userJoined", user, (data) => {
+      user.id = data.userId;
+    });
+    return user.id;
+  }
+  systemMessage(sysText) {
+    this.socket.on("createSystemMessage", (arg) => {
+      console.log(typeof arg, "test");
+      return arg;
+    });
+    console.log(typeof this.arg);
+
+    return sysText;
   }
   disconnect() {
     if (this.socket) {

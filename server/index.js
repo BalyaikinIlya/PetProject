@@ -1,6 +1,6 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
-
+const m = (name, text, id) => ({ name, text, id });
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
@@ -10,13 +10,14 @@ const io = new Server(httpServer, {
 
 io.on("connection", (socket) => {
   console.log(`${socket.id}  connected`);
-  let token = socket.handshake.auth.token;
-  socket.on("disconnect", () => {
-    console.log(`${socket.id}  disconnected`);
+
+  socket.on("userJoined", (data, cb) => {
+    cb({ userId: socket.id });
+    socket.emit("createSystemMessage", `Добро пожаловать ${data.name}`);
   });
 
-  socket.on("newMessage", (msg) => {
-    io.emit("broadcastMessage", `server: ${msg}`);
+  socket.on("disconnect", () => {
+    console.log(`${socket.id}  disconnected`);
   });
 });
 

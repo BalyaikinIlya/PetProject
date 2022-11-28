@@ -5,20 +5,19 @@
     </Button>
     <!--Номер комнаты должен задаваться динамически по идее, то есть у тебя есть контент Чат комнаты №, а уже  номер комнаты-->
     <!--задаётся динамически-->
-    <h2 class="chatbox-header__tittle">Чат комнаты №{{ userRoom }}</h2>
+    <h2 class="chatbox-header__tittle">Чат комнаты № {{ room }}</h2>
   </header>
 </template>
 <script>
 import Button from "@/components/UI/Button";
-import { mapMutations } from "vuex";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   components: {
     Button,
   },
   computed: {
     ...mapState({
-      userRoom: (state) => state.user,
+      room: (state) => state.user.user.room,
     }),
   },
   methods: {
