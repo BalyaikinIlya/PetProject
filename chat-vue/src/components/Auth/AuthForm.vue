@@ -30,7 +30,7 @@ import Button from "@/components/UI/Button.vue";
 import TextInput from "@/components/UI/TextInput.vue";
 import { mapMutations } from "vuex";
 import SocketioService from "@/services/socketio.service";
-import socketioService from "@/services/socketio.service";
+
 export default {
   data() {
     return {
@@ -46,16 +46,11 @@ export default {
         room: this.room,
       };
 
-      user.id = SocketioService.userJoined(user);
-      this.setUser(user);
-
-      const sysText = SocketioService.systemMessage();
-
-      this.createMessage({
-        text: sysText,
-        system: true,
+      SocketioService.userJoined(user).then((data) => {
+        user.id = data.userId;
+        this.setUser(user);
+        this.$router.push("/ChatRoom");
       });
-      this.$router.push("/ChatRoom");
     },
   },
 
