@@ -5,7 +5,10 @@
       {{ message.text }}
     </p>
   </div>
-  <div v-else-if="message.owner === true" class="message message_owner">
+  <div
+    v-else-if="this.userId === message.messageId"
+    class="message message_owner"
+  >
     <div class="message__content message__content_owner">
       <p class="message__text">
         {{ message.text }}
@@ -27,6 +30,11 @@
 <script>
 import Avatar from "@/components/UI/Avatar.vue";
 export default {
+  data() {
+    return {
+      userId: this.$store.state.user.user.userId,
+    };
+  },
   props: {
     message: {
       type: Object,

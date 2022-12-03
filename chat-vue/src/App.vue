@@ -3,19 +3,14 @@
 </template>
 
 <script>
-import SocketioService from "@/services/socketio.service";
-import { mapMutations } from 'vuex';
-
+import socket from "@/services/socketConnection.js";
+import { mapMutations } from "vuex";
 export default {
   created() {
-    SocketioService.setupSocketConnection();
-
-    SocketioService.onSystemMessage = (message) => {
-      this.createMessage(message);
-    }
-  },
-  beforeUnmount() {
-    SocketioService.disconnect();
+    socket.on("newMessage", (msg) => {
+      console.log(msg);
+      this.createMessage(msg);
+    });
   },
   methods: {
     ...mapMutations(["createMessage"]),

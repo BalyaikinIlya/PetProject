@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent="sendMessage" class="chatbox-footer__form send-form">
     <TextInput
-        v-model="text"
-        placeholder="Начните набирать сообщение"
-        class="send-form__text-input"
+      v-model="text"
+      placeholder="Начните набирать сообщение"
+      class="send-form__text-input"
     ></TextInput>
     <AttachInput></AttachInput>
     <Button type="submit">
@@ -15,9 +15,8 @@
 import Button from "@/components/UI/Button";
 import AttachInput from "@/components/UI/AttachInput";
 import TextInput from "@/components/UI/TextInput";
-import {mapMutations} from "vuex";
-import { uuidv4 } from '@/guid';
-
+import socket from "@/services/socketConnection.js";
+import { uuidv4 } from "@/guid";
 export default {
   data() {
     return {
@@ -25,14 +24,14 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["createMessage"]),
     sendMessage() {
-      this.createMessage({
+      socket.emit("newMessage", {
         id: uuidv4(),
+        messageId: this.$store.state.user.user.userId,
         text: this.text,
         // Писал по этому поводу
         time: "23:23",
-        owner: true,
+
         system: false,
       });
       this.text = "";

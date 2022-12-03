@@ -29,8 +29,8 @@ import Logo from "@/components/UI/Logo.vue";
 import Button from "@/components/UI/Button.vue";
 import TextInput from "@/components/UI/TextInput.vue";
 import { mapMutations } from "vuex";
-import SocketioService from "@/services/socketio.service";
-
+import socket from "@/services/socketConnection.js";
+import { uuidv4 } from "@/guid";
 export default {
   data() {
     return {
@@ -39,15 +39,15 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["setUser", "createMessage"]),
+    ...mapMutations(["setUser"]),
     submit() {
       const user = {
+        id: uuidv4(),
         name: this.name,
         room: this.room,
       };
-
-      SocketioService.userJoined(user).then((data) => {
-        user.id = data.userId;
+      socket.emit("userJoined", user, (data) => {
+        user.userId = data.userId;
         this.setUser(user);
         this.$router.push("/ChatRoom");
       });
