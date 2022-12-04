@@ -8,12 +8,15 @@
 <script>
 import Button from "@/components/UI/Button.vue";
 import { mapMutations } from "vuex";
+import socket from "@/services/socketConnection.js";
 export default {
   methods: {
     ...mapMutations(["clearData"]),
     exit() {
-      this.$router.push("/?message=leftChat");
-      this.clearData();
+      socket.emit("userLeft", this.$store.state.user.user.userId, () => {
+        this.$router.push("/?message=leftChat");
+        this.clearData();
+      });
     },
   },
   components: {

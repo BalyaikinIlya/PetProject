@@ -11,9 +11,13 @@ export default {
       console.log(msg);
       this.createMessage(msg);
     });
+    socket.on("updateUsers", (usr) => {
+      console.log(usr);
+      this.updateUsers(usr);
+    });
   },
   methods: {
-    ...mapMutations(["createMessage"]),
+    ...mapMutations(["createMessage", "updateUsers"]),
   },
 };
 </script>

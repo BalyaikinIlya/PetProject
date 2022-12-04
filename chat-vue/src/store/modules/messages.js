@@ -6,6 +6,9 @@ export default {
     createMessage(state, newMessage) {
       state.messages = [...state.messages, newMessage];
     },
+    clearData(state) {
+      state.messages = [];
+    },
   },
   state: {
     messages: [

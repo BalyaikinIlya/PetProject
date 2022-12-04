@@ -17,7 +17,7 @@ export class Users {
     const user = this.get(id);
 
     if (user) {
-      this.Users = this.Users.filter((user) => user.id !== id);
+      this.Users = this.Users.filter((user) => user.userId !== id);
     }
 
     return user;
