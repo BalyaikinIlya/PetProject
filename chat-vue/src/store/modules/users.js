@@ -11,5 +11,9 @@ export default {
   state() {
     users: [];
   },
-  getters: {},
+  getters: {
+    getUsers() {
+      return state.users;
+    },
+  },
 };

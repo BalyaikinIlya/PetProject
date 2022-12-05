@@ -1,6 +1,10 @@
 <template>
   <ul class="user-list box-scroll__content">
-    <UserListItem></UserListItem>
+    <UserListItem
+      v-for="user in getAllUsers"
+      :key="user.id"
+      :user="user"
+    ></UserListItem>
   </ul>
 </template>
 <script>
@@ -8,6 +12,11 @@ import UserListItem from "./UserListItem.vue";
 export default {
   components: {
     UserListItem,
+  },
+  computed: {
+    getAllUsers() {
+      return this.$store.getters.GetUsers;
+    },
   },
 };
 </script>

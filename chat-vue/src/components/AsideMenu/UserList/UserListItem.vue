@@ -1,7 +1,7 @@
 <template>
   <li class="user-list-item">
     <Avatar class="user-list-item__avatar"></Avatar>
-    <span class="user-list-item__name">Баляйкин Илья </span>
+    <span class="user-list-item__name">{{ user }}</span>
     <i class="fa-solid fa-star user-list-item__owner"></i>
   </li>
 </template>
@@ -10,6 +10,12 @@ import Avatar from "@/components/UI/Avatar.vue";
 export default {
   components: {
     Avatar,
+  },
+  props: {
+    user: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
