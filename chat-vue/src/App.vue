@@ -16,6 +16,7 @@ export default {
       this.updateUsers(usr);
     });
   },
+
   methods: {
     ...mapMutations(["createMessage", "updateUsers"]),
   },

@@ -59,15 +59,20 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    const user = users.remove(socket.id);
-    io.to(user.room).emit("updateUsers", users.getByRoom(user.room));
-    io.to(user.room).emit("newMessage", {
-      id: uuidv4(),
-      text: `Пользователь ${user.name} вышел`,
-      time: new Date(),
-      messageId: socket.id,
-      system: true,
-    });
+    try {
+      const user = users.remove(socket.id);
+      console.log(user);
+      io.to(user.room).emit("updateUsers", users.getByRoom(user.room));
+      io.to(user.room).emit("newMessage", {
+        id: uuidv4(),
+        text: `Пользователь ${user.name} вышел`,
+        time: new Date(),
+        messageId: socket.id,
+        system: true,
+      });
+    } catch (error) {
+      console.log("Failed Disconnect");
+    }
   });
   socket.on("newMessage", (msg) => {
     const user = users.get(msg.messageId);
