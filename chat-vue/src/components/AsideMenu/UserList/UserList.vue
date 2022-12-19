@@ -1,15 +1,13 @@
 <template>
   <ul class="user-list box-scroll__content">
-    <UserListItem
-      v-for="user in getUsers"
-      :key="user.id"
-      :user="user"
-    ></UserListItem>
+    <UserListItem v-for="user in getUsers" :key="user.id" :user="user">
+    </UserListItem>
   </ul>
 </template>
 <script>
 import UserListItem from "./UserListItem.vue";
 import { mapGetters } from "vuex";
+
 export default {
   components: {
     UserListItem,

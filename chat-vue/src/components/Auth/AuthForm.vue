@@ -13,6 +13,7 @@
       type="text"
     />
     <TextInput
+      maxlength="4"
       v-model="room"
       required
       class="auth-form__input"
@@ -41,16 +42,22 @@ export default {
   methods: {
     ...mapMutations(["setUser"]),
     submit() {
-      const user = {
-        id: uuidv4(),
-        name: this.name,
-        room: this.room,
-      };
-      socket.emit("userJoined", user, (data) => {
-        user.userId = data.userId;
-        this.setUser(user);
-        this.$router.push("/ChatRoom");
-      });
+      if (isNaN(Number(this.room))) {
+        alert("Номер комнаты должен содержать только цифры!");
+        this.room = "";
+        console.log(typeof Number(this.room));
+      } else {
+        const user = {
+          id: uuidv4(),
+          name: this.name,
+          room: this.room,
+        };
+        socket.emit("userJoined", user, (data) => {
+          user.userId = data.userId;
+          this.setUser(user);
+          this.$router.push("/ChatRoom");
+        });
+      }
     },
   },
 

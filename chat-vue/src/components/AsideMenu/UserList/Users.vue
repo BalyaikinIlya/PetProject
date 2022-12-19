@@ -1,18 +1,28 @@
 <template>
   <div class="users">
     <h2 class="users__tittle">Список пользователей</h2>
-    <Button class="users__button">Пригласить пользователей </Button>
+    <Button @click="isModalOpen = true" class="users__button"
+      >Пригласить пользователей
+    </Button>
+    <Modal v-if="isModalOpen" @close="isModalOpen = false"></Modal>
     <UserList></UserList>
   </div>
 </template>
 <script>
 import Button from "@/components/UI/Button";
 import UserList from "./UserList";
+import Modal from "@/components/UI/Modal";
 
 export default {
+  data() {
+    return {
+      isModalOpen: false,
+    };
+  },
   components: {
     Button,
     UserList,
+    Modal,
   },
 };
 </script>
