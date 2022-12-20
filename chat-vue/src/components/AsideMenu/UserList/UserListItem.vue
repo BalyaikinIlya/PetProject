@@ -1,13 +1,13 @@
 <template>
   <li class="user-list-item">
     <Avatar class="user-list-item__avatar"></Avatar>
-    <span @click="isMenuOpen = true" class="user-list-item__name">{{
+    <span @click="isMenuOpen = !isMenuOpen" class="user-list-item__name">{{
       user.name
     }}</span>
     <i class="fa-solid fa-star user-list-item__owner"></i>
     <UserMenu
       v-if="isMenuOpen"
-      @close="isMenuOpen = false"
+      @closeMenu="isMenuOpen = false"
       class="user-list-item__menu"
     ></UserMenu>
   </li>
