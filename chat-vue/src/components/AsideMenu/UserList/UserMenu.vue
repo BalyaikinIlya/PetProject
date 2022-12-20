@@ -1,7 +1,8 @@
 <template>
   <ul @click="closeMenu" @click.self="closeMenu" class="user-menu">
-    <li class="user-menu__item">Исключить</li>
+    <li @click="kick" class="user-menu__item">Исключить</li>
     <li class="user-menu__item">Назначить владельцем</li>
+    <li class="user-menu__item">Закрыть</li>
   </ul>
 </template>
 
@@ -11,6 +12,9 @@ export default {
     closeMenu() {
       this.$emit("closeMenu");
     },
+    kick() {
+      this.$emit("kick");
+    },
   },
 };
 </script>
@@ -19,11 +23,10 @@ export default {
 .user-menu {
   z-index: 100;
   list-style-type: none;
-  font-size: 18px;
+  font-size: 16px;
   background: var(--primary-modal-bg-color);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 3px 15px;
   border-bottom: 1px solid var(--primary-border);
   &__item {
     &:hover {

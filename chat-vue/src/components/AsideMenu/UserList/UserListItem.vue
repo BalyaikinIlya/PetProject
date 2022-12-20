@@ -1,10 +1,13 @@
 <template>
   <li class="user-list-item">
     <Avatar class="user-list-item__avatar"></Avatar>
-    <span @click="isMenuOpen = !isMenuOpen" class="user-list-item__name">{{
-      user.name
-    }}</span>
-    <i class="fa-solid fa-star user-list-item__owner"></i>
+    <span
+      v-if="!isMenuOpen"
+      @click="isMenuOpen = !isMenuOpen"
+      class="user-list-item__name"
+      >{{ user.name }}</span
+    >
+    <i v-if="!isMenuOpen" class="fa-solid fa-star user-list-item__owner"></i>
     <UserMenu
       v-if="isMenuOpen"
       @closeMenu="isMenuOpen = false"
@@ -21,7 +24,6 @@ export default {
       isMenuOpen: false,
     };
   },
-
   components: {
     Avatar,
     UserMenu,
@@ -44,10 +46,10 @@ export default {
   padding: 5px 20px;
 
   &__menu {
-    position: absolute;
+    position: fixed;
     text-align: center;
-    padding: 0;
-    margin-left: 300px;
+    padding: 3px 15px;
+    margin-left: 5%;
   }
   &__name {
     font-size: 18px;

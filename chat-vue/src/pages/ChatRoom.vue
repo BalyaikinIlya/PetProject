@@ -21,16 +21,21 @@ export default {
 @import "@/assets/style.scss";
 
 .layout {
-  display: grid;
   height: 100vh;
 
   @include mobile {
-    &__aside-menu {
-      display: none;
-    }
-    // &__chat {
+    display: flex;
+    // &__aside-menu {
     //   display: none;
     // }
+    // &__chat-box {
+    //   display: none;
+    // }
+    &__chat-box {
+      // grid-area: layout__chat-box;
+      flex: 1;
+      width: 100%;
+    }
   }
 
   @include desktop {
@@ -39,14 +44,14 @@ export default {
     display: flex;
 
     &__aside-menu {
-      grid-area: layout__aside-menu;
+      // grid-area: layout__aside-menu;
       background: var(--additional-bg-color);
       border-right: var(--primary-border);
       width: 320px;
     }
 
     &__chat-box {
-      grid-area: layout__chat-box;
+      // grid-area: layout__chat-box;
       flex: 1;
     }
   }
