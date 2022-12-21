@@ -16,18 +16,20 @@ io.on("connection", (socket) => {
 
   socket.on("userJoined", (data, cb) => {
     users.remove(socket.id);
+    let avatarPull = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let rand = Math.floor(Math.random() * avatarPull.length);
     users.add({
       id: data.id,
       userId: socket.id,
       name: data.name,
       room: data.room,
+      avatar: avatarPull[rand],
     });
 
     socket.join(data.room);
 
     cb({ userId: socket.id });
     io.to(data.room).emit("updateUsers", users.getByRoom(data.room));
-    console.log(users.getByRoom(data.room));
     socket.emit("newMessage", {
       id: uuidv4(),
       text: `Добро пожаловать ${data.name}`,
@@ -61,7 +63,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     try {
       const user = users.remove(socket.id);
-      console.log(user);
+      // console.log(user);
       io.to(user.room).emit("updateUsers", users.getByRoom(user.room));
       io.to(user.room).emit("newMessage", {
         id: uuidv4(),
@@ -82,6 +84,7 @@ io.on("connection", (socket) => {
       time: "12:22",
       system: msg.system,
       text: msg.text,
+      messageAvatar: msg.messageAvatar,
     });
   });
 

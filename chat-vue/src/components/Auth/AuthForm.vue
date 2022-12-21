@@ -29,7 +29,7 @@
 import Logo from "@/components/UI/Logo.vue";
 import Button from "@/components/UI/Button.vue";
 import TextInput from "@/components/UI/TextInput.vue";
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 import socket from "@/services/socketConnection.js";
 import { uuidv4 } from "@/guid";
 export default {
@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setUser"]),
+
     submit() {
       if (isNaN(Number(this.room))) {
         alert("Номер комнаты должен содержать только цифры!");
@@ -52,6 +53,7 @@ export default {
           name: this.name,
           room: this.room,
         };
+
         socket.emit("userJoined", user, (data) => {
           user.userId = data.userId;
           this.setUser(user);

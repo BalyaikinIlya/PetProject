@@ -25,15 +25,22 @@ export default {
   },
   methods: {
     sendMessage() {
-      socket.emit("newMessage", {
-        id: uuidv4(),
-        messageId: this.$store.state.user.user.userId,
-        text: this.text,
-        // Писал по этому поводу
-        time: "23:23",
+      const users = this.$store.state.users.users;
+      users.forEach((element) => {
+        if (element.userId === this.$store.state.user.user.userId) {
+          this.$store.state.user.user.avatar = element.avatar;
+          socket.emit("newMessage", {
+            id: uuidv4(),
+            messageId: this.$store.state.user.user.userId,
+            text: this.text,
 
-        system: false,
+            time: "23:23",
+            messageAvatar: element.avatar,
+            system: false,
+          });
+        }
       });
+
       this.text = "";
     },
   },

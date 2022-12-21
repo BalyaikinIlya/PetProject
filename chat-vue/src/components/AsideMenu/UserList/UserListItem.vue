@@ -1,6 +1,7 @@
 <template>
   <li class="user-list-item">
-    <Avatar class="user-list-item__avatar"></Avatar>
+    <Avatar :userAvatar="user.avatar" class="user-list-item__avatar"></Avatar>
+
     <span
       v-if="!isMenuOpen"
       @click="isMenuOpen = !isMenuOpen"
@@ -28,6 +29,7 @@ export default {
     Avatar,
     UserMenu,
   },
+
   props: {
     user: {
       type: Object,

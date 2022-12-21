@@ -1,6 +1,5 @@
 <template>
-  <!-- Нет необходимости явно сравнивать c true/false, достаточно просто  v-if="messages.system" или  v-if="!messages.system"  -->
-  <div v-if="message.system === true" class="message message_system">
+  <div v-if="message.system" class="message message_system">
     <p class="message__text message__text_system-join">
       {{ message.text }}
     </p>
@@ -15,7 +14,10 @@
       </p>
       <span class="message__time">{{ message.time }}</span>
     </div>
-    <Avatar class="message__avatar message__avatar_owner"></Avatar>
+    <Avatar
+      :userAvatar="this.$store.state.user.user.avatar"
+      class="message__avatar message__avatar_owner"
+    ></Avatar>
   </div>
   <div v-else class="message">
     <div class="message__content message__content">
@@ -24,7 +26,10 @@
       </p>
       <span class="message__time">{{ message.time }}</span>
     </div>
-    <Avatar class="message__avatar message__avatar"></Avatar>
+    <Avatar
+      :userAvatar="this.$store.state.messages.messages.messageAvatar"
+      class="message__avatar message__avatar"
+    ></Avatar>
   </div>
 </template>
 <script>
@@ -34,6 +39,17 @@ export default {
     return {
       userId: this.$store.state.user.user.userId,
     };
+  },
+  computed: {
+    getAvatarUrl() {
+      // const users = this.$store.state.users.users;
+      // users.forEach((element) => {
+      //   if (element.userId === this.message.messageId) {
+      //     console.log(element.avatar);
+      //     this.message.messageAvatar = element.avatar;
+      //   }
+      // });
+    },
   },
   props: {
     message: {
