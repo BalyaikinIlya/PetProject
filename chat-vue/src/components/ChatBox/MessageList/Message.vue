@@ -15,7 +15,7 @@
       <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar
-      :userAvatar="this.$store.state.user.user.avatar"
+      :userAvatar="message.messageAvatar"
       class="message__avatar message__avatar_owner"
     ></Avatar>
   </div>
@@ -27,7 +27,7 @@
       <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar
-      :userAvatar="this.$store.state.messages.messages.messageAvatar"
+      :userAvatar="message.messageAvatar"
       class="message__avatar message__avatar"
     ></Avatar>
   </div>

@@ -84,7 +84,7 @@ io.on("connection", (socket) => {
       time: "12:22",
       system: msg.system,
       text: msg.text,
-      messageAvatar: msg.messageAvatar,
+      messageAvatar: user.avatar,
     });
   });
 
