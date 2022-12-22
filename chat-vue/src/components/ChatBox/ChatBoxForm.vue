@@ -5,7 +5,7 @@
       placeholder="Начните набирать сообщение"
       class="send-form__text-input"
     ></TextInput>
-    <AttachInput></AttachInput>
+    <AttachInput ref="file" @change="handleChange($event)"></AttachInput>
     <Button type="submit">
       <i class="fa-solid fa-paper-plane send-form__button-icon"></i>
     </Button>
@@ -18,29 +18,35 @@ import TextInput from "@/components/UI/TextInput";
 import socket from "@/services/socketConnection.js";
 import { uuidv4 } from "@/guid";
 export default {
+  setup() {},
   data() {
     return {
       text: "",
+      fileUrl: "",
     };
   },
   methods: {
+    handleChange(e) {
+      console.log(URL.createObjectURL(e.target.files[0]));
+      this.fileUrl = URL.createObjectURL(e.target.files[0]);
+    },
     sendMessage() {
       const users = this.$store.state.users.users;
       users.forEach((element) => {
         if (element.userId === this.$store.state.user.user.userId) {
           this.$store.state.user.user.avatar = element.avatar;
+
           socket.emit("newMessage", {
             id: uuidv4(),
             messageId: this.$store.state.user.user.userId,
             text: this.text,
-
-            time: "23:23",
+            fileUrl: this.fileUrl,
             messageAvatar: element.avatar,
             system: false,
           });
         }
       });
-
+      this.fileUrl = "";
       this.text = "";
     },
   },

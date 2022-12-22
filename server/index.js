@@ -77,15 +77,25 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("newMessage", (msg) => {
+    let isMsgText = true;
     const user = users.get(msg.messageId);
-    io.to(user.room).emit("newMessage", {
-      id: msg.id,
-      messageId: user.userId,
-      time: "12:22",
-      system: msg.system,
-      text: msg.text,
-      messageAvatar: user.avatar,
-    });
+    if (msg.text === "" && msg.fileUrl === "") {
+      console.log("empty Message ");
+    } else {
+      if (msg.fileUrl != "") {
+        isMsgText = false;
+      }
+      io.to(user.room).emit("newMessage", {
+        id: msg.id,
+        messageId: user.userId,
+        time: `${new Date().getHours()}:${new Date().getMinutes()}`,
+        system: msg.system,
+        text: msg.text,
+        messageAvatar: user.avatar,
+        fileUrl: msg.fileUrl,
+        isMsgText: isMsgText,
+      });
+    }
   });
 
   socket.on("disconnect", () => {

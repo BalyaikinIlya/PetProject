@@ -12,6 +12,12 @@
       <p class="message__text">
         {{ message.text }}
       </p>
+      <img
+        v-if="!message.isMsgText"
+        style="width: 250px"
+        :src="message.fileUrl"
+        alt=""
+      />
       <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar
@@ -24,6 +30,12 @@
       <p class="message__text">
         {{ message.text }}
       </p>
+      <img
+        v-if="!message.isMsgText"
+        style="width: 250px"
+        :src="message.fileUrl"
+        alt=""
+      />
       <span class="message__time">{{ message.time }}</span>
     </div>
     <Avatar
