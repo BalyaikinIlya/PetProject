@@ -9,12 +9,12 @@
     class="message message_owner"
   >
     <div class="message__content message__content_owner">
-      <p class="message__text">
+      <p v-if="message.isMsgText" class="message__text">
         {{ message.text }}
       </p>
       <img
+        class="message__img"
         v-if="!message.isMsgText"
-        style="width: 250px"
         :src="message.fileUrl"
         alt=""
       />
@@ -27,12 +27,12 @@
   </div>
   <div v-else class="message">
     <div class="message__content message__content">
-      <p class="message__text">
+      <p v-if="message.isMsgText" class="message__text">
         {{ message.text }}
       </p>
       <img
+        class="message__img"
         v-if="!message.isMsgText"
-        style="width: 250px"
         :src="message.fileUrl"
         alt=""
       />
@@ -75,6 +75,7 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/assets/mixins.scss";
 .message {
   display: flex;
   flex-direction: column;
@@ -83,6 +84,22 @@ export default {
   // То есть 60% с одной и 60% с другой
   max-width: 60%;
   align-self: flex-start;
+
+  @include mobile {
+    &__img {
+      padding: 5px;
+      border-radius: 10px;
+      width: 100px;
+    }
+  }
+  @include desktop {
+    &__img {
+      padding: 5px;
+      border-radius: 10px;
+      width: 200px;
+    }
+  }
+
   &_owner {
     align-self: flex-end;
     color: var(--additional-text-color);

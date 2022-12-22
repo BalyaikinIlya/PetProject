@@ -3,10 +3,11 @@ import ChatRoom from "@/pages/ChatRoom";
 import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
-    path: "/",
+    path: "/:room?",
     component: Auth,
     name: "Home",
   },
+
   {
     path: "/ChatRoom",
     component: ChatRoom,

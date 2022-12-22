@@ -1,7 +1,7 @@
 <template>
   <div @click.self="close" class="modal">
     <div class="modal-inner">
-      <span class="modal__span">localhost:8081/#/?room={{ room }}</span>
+      <span class="modal__span">localhost:8081/#/{{ room }}</span>
       <button @click="copyLink" class="modal__button">Скопировать</button>
     </div>
   </div>

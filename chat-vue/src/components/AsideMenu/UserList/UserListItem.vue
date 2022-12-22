@@ -8,7 +8,7 @@
       class="user-list-item__name"
       >{{ user.name }}</span
     >
-    <i v-if="!isMenuOpen" class="fa-solid fa-star user-list-item__owner"></i>
+    <!-- <i v-if="!isMenuOpen" class="fa-solid fa-star user-list-item__owner"></i> -->
     <UserMenu
       v-if="isMenuOpen"
       @closeMenu="isMenuOpen = false"

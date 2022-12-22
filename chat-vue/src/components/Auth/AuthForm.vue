@@ -37,11 +37,18 @@ export default {
     return {
       name: "",
       room: "",
+      inviteRoom: null,
     };
   },
   methods: {
     ...mapMutations(["setUser"]),
-
+    checkInviteRoom() {
+      if (this.$route.params.room === "") {
+        this.room = this.$route.params.room;
+      } else {
+        this.room = "";
+      }
+    },
     submit() {
       if (isNaN(Number(this.room))) {
         alert("Номер комнаты должен содержать только цифры!");
@@ -86,18 +93,19 @@ export default {
     background: var(--additional-secondary-color);
     padding: 5px 40px;
     border-radius: 10px;
+    color: #fff;
     &:hover {
       background: var(--primary-hover-color);
     }
   }
   &__input {
     @include desktop {
-      font-size: 24px;
+      font-size: 18px;
       border-radius: 20px;
       padding: 5px 10px;
     }
     @include mobile {
-      font-size: 18px;
+      font-size: 14px;
       border-radius: 20px;
       padding: 5px 10px;
     }

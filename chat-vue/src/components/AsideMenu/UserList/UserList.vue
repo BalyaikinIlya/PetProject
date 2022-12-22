@@ -6,7 +6,6 @@
 </template>
 <script>
 import UserListItem from "./UserListItem.vue";
-import { mapGetters } from "vuex";
 
 export default {
   components: {

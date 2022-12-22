@@ -20,6 +20,7 @@ export default {
     scrollDown() {
       this.$nextTick(() => {
         this.$refs.block.scrollTop = this.$refs.block.scrollHeight;
+        //TO DO Скролл при картинке не доскролливает
       });
     },
   },
