@@ -1,4 +1,5 @@
 <template>
+<!--  type пропущен-->
   <button class="button">
     <slot></slot>
   </button>
