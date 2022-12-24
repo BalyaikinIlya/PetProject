@@ -36,6 +36,7 @@ export default {
         if (element.userId === this.$store.state.user.user.userId) {
           this.$store.state.user.user.avatar = element.avatar;
 
+          // всю работу с сокетами надо вынести во vuex
           socket.emit("newMessage", {
             id: uuidv4(),
             messageId: this.$store.state.user.user.userId,

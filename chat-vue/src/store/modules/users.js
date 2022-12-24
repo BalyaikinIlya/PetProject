@@ -9,7 +9,7 @@ export default {
     },
   },
   state() {
-    users: [];
+    users: []; // неверный синтаксис здесь, смотри AsideMenu синтаксис
   },
   getters: {
     getUsers() {
